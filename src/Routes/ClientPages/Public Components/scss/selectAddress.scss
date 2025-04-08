@@ -1,0 +1,104 @@
+.select-address{
+    .header{
+        padding-top: 10px;
+        padding-left: 10px;
+        width: 100%;
+        height: 10%;
+        border-bottom: 2px solid rgb(171, 171, 171);
+        p{
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+    .contents{
+        padding: 15px;
+        max-height: 450px;
+        min-height: 450px;
+        overflow-y: scroll; 
+        scrollbar-width: none; 
+        -ms-overflow-style: none;
+        .cardIT{
+            border: 1px solid gray;
+            line-height: 0.5;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+            input{
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+                margin-left: 10px;
+            }
+            .div_s87{
+                
+                .p_hs6{
+                    font-weight: 500;
+                    padding-right: 10px;
+                    padding-top: 5px;
+                    border-right: 2px solid rgb(157, 157, 157);
+                    height: 20px;
+                    align-items: center;
+                }
+                .p_js6{
+                    padding-left: 10px;
+                    padding-top: 5px;
+                }
+                
+            }
+
+            .p_hs2{
+                color: gray;
+            }
+            .p_77sa{
+                color: gray;
+            }
+            .idDefault{
+                border: 1px solid orangered;
+                width: 15%;
+                padding-top: 10px;
+                font-size: 14px;
+                text-align: center;
+                background-color: rgb(255, 228, 218);
+                justify-items: center;
+                justify-content: center;
+                p{
+                    height: 80%;
+                }
+            }
+        }
+    }
+
+    .contents-noaddress{
+        padding: 15px;
+        max-height: 450px;
+        min-height: 450px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 20%;
+        p{
+            font-size: 17px;
+            color: rgb(97, 97, 97);
+        }
+        button{
+            user-select: none;
+            width: 100px;
+            height: 40px;
+            background-color: rgb(255, 136, 93);
+            border-radius: 5px;
+            border: 2px solid orangered;
+            color: white;
+            font-weight: 500;
+        }
+    }
+
+
+    .footeModal{
+        border-top: 2px solid rgb(171, 171, 171);
+        padding-left: 64%;
+        padding-top: 10px;
+        .btn-success{
+            margin-left: 10px;
+        }
+    }
+}

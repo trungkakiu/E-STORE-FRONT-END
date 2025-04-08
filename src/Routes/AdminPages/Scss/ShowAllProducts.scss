@@ -1,0 +1,261 @@
+.cart-container{
+    margin-top: 8%;
+    background-color: white;
+    min-height: 80vh;
+    border-radius: 15px;
+    width: 98.5%;
+    margin-bottom: 30px;
+    .productbycategory{
+        padding: 1%;
+        max-height: 100%;
+        .cl992{
+            max-height: 170px;
+            border-radius: 15px;
+            background-color: rgb(78, 149, 255);
+            padding: 5px;
+            color: white;
+           .cate991{
+                user-select: none;
+                color: white;
+                cursor: pointer;
+                margin-top: 0.6%;
+                border-radius: 10px;
+                background-color: white;
+                position: relative;
+                padding-left: 10px;
+                transition: transform 0.2s ease, background-color 0.1s ease;
+                padding-right: 10px;
+                margin-left: 10px;
+                margin-right: 5px;
+                margin-bottom: 0.7%;
+                height: 30px;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                .ic8889{
+                    color: black;
+                }
+           }
+           .cate991:hover{
+            transform: scale(1.015);
+            background-color: rgb(220, 220, 220);
+           }
+          
+           .div9982{
+
+                .cl766{
+                    height: 40px;
+                    .ic98as{
+                        padding-top: 5px;
+                        font-size: 30px;
+                        padding-right: 1%;
+                    }
+                    .op9as{
+                        padding-top: 5px;
+                        font-size: 20px;
+                        font-weight: 500;
+                    }
+                }
+                .cateT762{
+                    background-color: #ffffff;
+                    transform: translateX(1370%);
+                    user-select: none;
+                    border-radius: 5px;
+                    height: 35px;
+                    margin-right: 10px;
+                    .ic0882{
+                        color: black;
+                        font-size: 25px;
+                        justify-content: center;
+                        padding: 4px;
+                    }
+                    input{
+                        outline: none;
+                        border-radius: 5px;
+                        border: 1px solid white;
+                    }
+                }
+           }
+            .ctg8812{
+                flex-wrap: wrap;
+                border-radius: 10px;
+                overflow-y: scroll; 
+                background-color: white;
+                padding-top: 5px;
+                color: black;
+                scrollbar-width: none; 
+                -ms-overflow-style: none;
+                max-height: 110px;
+                .cate{
+                    user-select: none;
+                    cursor: pointer;
+                    border: 2px solid black;
+                    margin-top: 0.7%;
+                    border-radius: 10px;
+                    position: relative;
+                    padding-left: 10px;
+                    transition: transform 0.2s ease, background-color 0.1s ease;
+                    padding-right: 10px;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    margin-bottom: 0.5%;
+                    height: 30px;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                    .xmark{
+                        position: absolute;
+                        right: -8px; 
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: red;
+                        background-color: white;
+                        border-radius: 3px;
+                        padding: 2px 5px;
+                        margin-top: -14px;
+                        border: 1px solid black;
+                        cursor: pointer;
+                    }
+                    .pc7162{
+    
+                    }
+                }
+                .cate:hover{
+                    background-color: rgb(220, 220, 220);
+                    transform: scale(1.015);
+                }
+            }
+
+
+
+        }
+        .product-show{
+            padding-top: 20px;
+            .product{
+                width: 100%;
+                border-radius: 10px;
+                height: 100%;
+                background-color: #4E95FF;
+                padding-top: 10px;
+                .find{
+                    width: 100%;
+                    justify-content: space-between;
+                   .div8872{
+                        padding: 5px;
+                        width: 60%;
+                        background-color: white;
+                        margin-left: 20px;
+                        height: 50px;
+                        border-radius: 10px;
+                        input{
+                            text-align: center;
+                            width: 90%;
+                            height: 100%;
+                            outline: none;
+                            border: 1px solid white;
+                        }
+                        .ic992{
+                            transition: background-color 0.1s ease;
+                            padding-top: 1px;
+                            font-size: 30px;
+                            padding: 3px;
+                        }
+                        .ic992:hover{
+                            background-color: #4E95FF;
+                        }
+                   }   
+                   .sl0092{
+                    width: 350px;
+                    margin-right: 20px;
+                    border-radius: 10px;
+                    height: 50px;
+                    border: 1px solid white;
+                    text-align: center;
+                    outline: none;
+                    font-size: 16px;
+                    background: #fff;
+                    color: #333;
+                    cursor: pointer;
+                    transition: 0.3s;
+                    padding: 10px;
+                        option{
+                            background-color: #d8d8d8;
+                            width: 100%;
+                            padding: 20px !important;
+                            border-radius: 8px;
+                            border: 2px solid #ccc;
+                            font-size: 16px;
+                            background: #fff;
+                            color: #333;
+                            appearance: none; 
+                            cursor: pointer;
+                            transition: 0.3s;
+                        }
+
+                   }
+                }
+                .show{
+                    padding-bottom: 20px;
+                    width: 100%;
+                    margin-top: 20px;
+                    display: grid;
+                    overflow-y: scroll; 
+                    scrollbar-width: none; 
+                    -ms-overflow-style: none;
+                    padding-left: 2%;
+                    max-height: 88vh;
+                    padding-right: 0;
+                    grid-template-columns: repeat(6, 1fr);
+                    gap: 10px;
+                    justify-content: center;
+                    .card{
+                        height: 300px;
+                        transition: transform 0.1s ease;
+                        .topcard{
+                            height: 80%;
+                            .Primg{
+                                padding-top: 10px;
+                                width: 100%;
+                                height: 12rem;
+                            }
+                        }
+                        .bodycard{
+                            text-align: center;
+                            line-height: 1;
+                            p{
+                                font-weight: 500;
+                            }
+                            
+                        }
+                    }
+                    .card:hover{
+                        transform: scale(1.015);
+                    }
+                }
+            }
+
+
+
+            .noProduct{
+                margin-left: 38%;
+                margin-top: 10%;
+                text-align: center;
+                .ic1192{
+                    font-size: 60px;
+                }
+                .div7762{
+                    line-height: 1;
+                    padding-top: 3%;
+                    .p0992{
+                        font-size: 20px;
+                    }
+                    .p4423{
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+       
+    }
+
+}

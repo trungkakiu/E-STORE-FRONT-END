@@ -1,0 +1,50 @@
+.Cart-histories{
+    .headerBar{
+        user-select: none;
+        background-color: white;
+        height: 50px;
+        width: 80%;
+        margin-left: 10%;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+        -3px -3px 5px rgba(255, 255, 255, 0.5);
+        .itemHeader{
+            cursor: pointer;
+            width: 14.3%;
+            height: 50px;
+            font-size: 17px;
+            font-weight: 500;
+            padding-top: 1%;
+            text-align: center;
+            border-bottom: 2px solid rgb(154, 154, 154);
+        }
+        .itemHeader_active{
+            cursor: pointer;
+            width: 14.3%;
+            height: 50px;
+            font-size: 17px;
+            font-weight: 500;
+            padding-top: 1%;
+            text-align: center;
+            color: orangered;
+            border-bottom: 3px solid orangered;
+        }
+    }
+    .ContentBody{
+        background-color: white;
+        width: 80%;
+        margin-top: 10px;
+        margin-left: 10%;
+        min-height: 70vh;
+        max-height: 70vh;
+        padding: 10px;
+        .NoContent{
+            user-select: none;
+            margin-left: 40%;
+            width: 193px;
+            margin-top: 11%;
+            height: 212px;
+            padding-top: 210px;
+            text-align: center;
+        }
+    }
+}

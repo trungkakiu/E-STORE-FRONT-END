@@ -1,0 +1,177 @@
+.UserSetting-container{
+    margin-left: 15%;
+    width: 1000px;
+    height: 500px;
+    .contents{
+        width: 1000px;
+        height: 500px;
+        user-select: none;
+        .bot{
+            width: 70%;
+            margin-left: 15px;
+            .contentTopic{
+                width: 70%;
+                height: 270px;
+                margin-bottom: 15px;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+                -3px -3px 5px rgba(255, 255, 255, 0.5);
+                background-color: white ;
+                .Dashboard{
+                    img{
+                        width: 100%;
+                        height: 270px;
+                    }
+                }
+                .changePass{
+                    text-align: center;
+                    input{
+                        text-align: center;
+                        width: 80%;
+                        margin-top: 10px;
+                        height: 45px;
+                        padding: 4px;
+                        border-radius: 10px;
+                    }
+                    .d-flex{
+                        padding-left: 7.8%;
+                        input{
+                            margin-left: 10px;
+                            width: 42.3%;
+                        }
+                    }
+                    .btn-secondary{
+                        display: flex;
+                        margin-top: 20px;
+                        margin-left: 42%;
+                    }
+                    .btn-success{
+                        display: flex;
+                        margin-top: 20px;
+                        margin-left: 44%;
+                    }
+                }
+            }
+            .Tager{
+                width: 28%;
+                margin-left: 15px;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+                -3px -3px 5px rgba(255, 255, 255, 0.5);
+                height: 270px;
+                background-color: white ;
+                border-top-right-radius: 20px;
+                padding: 5px;
+                .isActive{
+                    cursor: pointer;
+                    text-align: center;
+                    padding-top: 6px;
+                    font-weight: 600;
+                    width: 100%;
+                    color: white;
+                    height: 15%;
+                    background-color: rgb(0, 196, 196);
+                    transition: transform 0.2s ease;
+                }
+                .isActive:hover{
+                    transform: scale(1.03);
+                }
+                .path{
+                    cursor: pointer;
+                    text-align: center;
+                    font-weight: 600;
+                    padding-top: 6px;
+                    width: 100%;
+                    height: 15%;
+                    transition: transform 0.2s ease;
+                    background-color: rgb(137, 255, 255);
+                }
+                .path:hover{
+                    transform: scale(1.03);
+                }
+            }
+            .banner02{
+                img{
+                    width: 100%;
+                    height: 100%;
+                     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+                    -3px -3px 5px rgba(255, 255, 255, 0.5);
+                    border-bottom-right-radius: 20px;
+                }
+                .Address{
+                    width: 100%;
+                    border-bottom-right-radius: 20px;
+                    height: 215px;
+                    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+                    -3px -3px 5px rgba(255, 255, 255, 0.5); 
+                    background-color: white;
+                    
+                    .AddressHeader{
+                        justify-content: space-between;
+                        align-items: center;
+                        height: 20%;
+                        p{
+                            font-weight: 600;
+                            padding-top: 2%;
+                            padding-left: 1%;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 18px;
+                        }
+                        button{
+                            background-color: orangered;
+                            color: white;
+                            margin-right: 10px;
+                            border-radius: 5px;
+                            border: 1px solid orangered;
+                        }
+                    }
+
+
+                    .AddressContents{
+                       
+                        overflow-y: scroll; 
+                        scrollbar-width: none; 
+                        -ms-overflow-style: none;
+                        padding: 5px;
+                        max-height: 170px;
+                        
+                        border-top: 2px solid rgb(229, 229, 229) ;
+                        .addItem{
+                            border: 2px solid orangered;
+                            margin-bottom: 10px;
+                            padding: 10px;
+
+                            .ic78s{
+                                font-size: 20px;
+                                margin-right: 20px;
+                                padding-bottom: 2px;
+                            }
+                            .isDefault{
+                                height: 20px;
+                                width: 20px;
+                            }
+                        }
+                    }
+                    .noAdd{
+                        border-top: 2px solid rgb(229, 229, 229) ;
+                        max-height: 170px;
+                        align-items: center;
+                        width: 100%;
+                        .icon{
+                            justify-content: center;
+                            width: 100%;
+                            font-size: 30px;
+                            margin-top: 30px;
+                        }
+                        .p{
+                            margin-left: 35%;
+                            justify-content: center;
+                        }
+                    }
+                }
+               
+            }
+        }
+       
+    }
+
+}

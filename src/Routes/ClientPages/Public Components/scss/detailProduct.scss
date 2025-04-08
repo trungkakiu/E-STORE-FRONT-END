@@ -1,0 +1,338 @@
+.detail-container{
+    height: 100%;
+    padding: 10px 5% 0px 5%;
+    flex: 5;
+    .routes{
+        list-style: none;
+        width: 100%;
+        li{
+            cursor: pointer;
+            padding: 15px 10px 0px 10px;
+        }
+        .Homelink{
+            text-decoration: none;
+            margin-left: -42px;
+            color: gray;
+            transition: color 0.15s ease;
+        }
+        .Homelink:hover{
+            color: rgb(54, 54, 54);
+        }
+    }
+    .contents{
+        .leftcontents{
+            width: 55%;
+            overflow: hidden;
+            .coments{
+                margin-top: 3%;
+                padding-left: 2px;
+                .review-tag{
+                    border-top: 2px solid black;
+                    padding-top: 10px;
+                    p{
+                        user-select: none;
+                        cursor: pointer;
+                        border-radius: 15px;
+                        transition: background-color 0.15s ease, transform 0.15s ease, border 0.15s ease;
+                        border: 1px rgb(141, 141, 141) solid;
+                        padding: 3px 7px 3px 7px;
+                        background-color: rgb(255, 255, 255);
+                        margin-right: 10px;
+                        font-weight: 450;
+                    }
+                    p:hover{
+                        transform: scale(1.015);
+                        background-color: rgb(229, 229, 229);
+                        border: 1px rgb(0, 0, 0) solid;
+
+                    }
+                }
+                .comenter{
+                    text-align: center;
+                    justify-content: center;
+                    .cmicon{
+                        margin-top: 20px;
+                        font-size: 56px;
+                        margin-bottom: 10px;
+                    }
+                    p{
+
+                    }
+                }
+            }
+          
+            .product-pictures{
+                overflow: hidden;
+                overflow-y: auto;
+                max-height: 600px;
+                .another-picture{
+                    padding-right: 20px;
+                    overflow-y: scroll; 
+                    scrollbar-width: none; 
+                    -ms-overflow-style: none;
+                    .card{
+                        margin-bottom: 5px;
+                        .image-placeholder{
+                            .loading-spinner{
+                                text-align: center;
+                                align-items: center;
+                                height: 100%;
+                                .ic8s{
+                                    margin-top: 55%;
+                                    animation: spin 2s linear infinite;
+                                }
+                                @keyframes spin {
+                                    0% { transform: rotate(0deg); }
+                                    100% { transform: rotate(360deg); }
+                                }
+                            }
+                           
+                        }
+                    }
+                }
+            }
+            .topic-picture{
+                text-align: center;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                overflow-y: scroll; 
+                scrollbar-width: none; 
+                -ms-overflow-style: none;
+                .ptr987{
+                    width: 100%;
+                    height: 100%;
+                    overflow-y: scroll; 
+                    scrollbar-width: none; 
+                    -ms-overflow-style: none;
+                    object-fit: contain;
+                    height: 650px;
+                }
+            }
+            .review-product{
+                width: 100%;
+                margin-top: 20px;
+                .slrv{
+                    padding-top: 2px;
+                    width: 17%;
+                    p{
+                        font-size: 18px;
+                        font-weight: 550;
+                    }
+                }
+                .rate{
+                    p{
+                        font-size: 20px;
+                        font-weight: 550;
+                        padding-right: 6px;
+                    }
+                    .star{
+                        font-size: 23px;
+                        padding-top: 2px;
+                        transition: color ease 0.1s;
+                    }
+                    .star:hover{
+                        color: yellow
+                    }
+                }
+                .arafvp{
+                    padding-left: 22.2%;
+                    .ldiv{
+                        background-color: rgb(0, 173, 6);
+                        height: 30px;
+                        width: 30px;
+                        justify-content: center;
+                        align-items: center;
+                        border-top-left-radius: 7px ;
+                        border-bottom-left-radius: 7px;
+                        .lockicon{
+                           padding: 7px;
+                        }
+                    }
+                  
+                    p{
+                        background-color: rgb(156, 224, 156);
+                        padding-left: 5px;
+                        padding-right: 5px;
+                        padding-top: 3px;
+                    }
+                }
+            }
+        }
+        .rightcontents{
+            padding-left: 4%;
+            overflow-y: scroll; 
+            overflow: hidden;
+            overflow-y: auto;
+            max-height: 110vh;
+            scrollbar-width: none; 
+            -ms-overflow-style: none;
+            width: 45%;
+            .detail-product{
+                margin-top: 20px;
+                .Topic{
+                    font-size: 20px;
+                    font-weight: 550;
+                }
+            }
+            .FreeShip-banner{
+                border-radius: 3px;
+                background-color: antiquewhite;
+                justify-content: space-between;
+                cursor: pointer;
+                user-select: none;
+                .fhbn-1{
+                    padding-left: 10px;
+                    justify-content: center;
+                    align-items: center;
+                    height: 45px;
+                    p{
+                        margin-top: 6%;
+                        margin-left: 5px;
+                        font-weight: 500;
+                    }
+                }
+                .fsbn-2{
+                    height: 45px;
+                    padding-top: 1.6%;
+                    color: rgb(65, 65, 65);
+                }
+            }
+            .product{
+                .product-name{
+                    margin-top: 10px;
+                    p{
+                        font-family: Verdana, Geneva, Tahoma, sans-serif;
+                        font-weight: 550;
+                        font-size: 18px;
+                    }
+                }
+                .product-decription{
+                    p{
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        font-size: 16px;
+                    }
+                }
+                .soldcount{
+                    justify-content: space-between;
+                    .soldtotal{
+                        color: rgb(81, 81, 81);
+                    }
+                    .soldstar{
+                        user-select: none;
+                        font-size: 20px;
+                        .star{
+                            margin-top: 4px;
+                            padding-left: 3px;
+                        }
+                    }
+                    
+                }
+                .tag{
+                    p{
+                        padding: 0px 3px;
+                    }
+                }
+                .price{
+                    .priceTopic{
+                        color: orangered;
+                        font-size: 22px;
+                        font-weight: 500;
+                    }
+                    .price2{
+                        text-decoration: line-through;
+                        color: rgb(89, 89, 89);
+                        margin-top: 7px;
+                        margin-left: 20px;
+                    }
+                    .discount{
+                        border: 1px orangered solid;
+                        margin-left: 10px;
+                        height: 25px;
+                        border-radius: 5px;
+                        margin-top: 5px;
+                        p{
+                            font-size: 10px;
+                            padding: 3px;
+                            font-weight: 600;
+                            color: orangered;
+
+                        }
+                    }
+                    
+                }
+                .bigsales{
+                    background-color: orangered;
+                    border-radius: 3px;
+                    padding: 5px 2px 2px 2px;
+                    p{
+                        color: white;
+                        font-weight: 550;
+                    }
+                    .p1{
+                        margin-left: 20px;
+                    }
+                    .p2{
+                        margin-left: 20px;
+                    }
+                    .downbanner{
+                        padding: 15px 10px 15px 10px;
+                        background-color: white;
+                        border-radius: 3px;
+                        p{
+                            color: black;
+                        
+                        }
+                        .Color{
+                            cursor: pointer;
+                            user-select: none;
+                            margin-left: 3px;
+                            padding: 0px 3px;
+                            border-radius: 2px;
+                            transition: transform 0.15s ease, background-color 0.15s ease; 
+                            background-color: rgb(216, 216, 216);
+                        }
+                        .Color:hover{
+                            transform: scale(1.025);
+                            background-color: rgb(158, 158, 255);
+                        }
+                        .d2{
+                            label{
+                                font-weight: 550;
+                            }
+                            input{
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+                .addcart{
+                    background-color: orangered;
+                    border-radius: 15px;
+                    margin-top: 20px;
+                    width: 95%;
+                    margin-left: 2.5%;
+                    height: 50px;
+                    padding-top: 14px;
+                    line-height: 0.2;
+                    transition: background-color 0.2s ease, transform 0.2s ease ;
+                    .p1{
+                        color: white;
+                    }
+                    .p2{
+                        color: white;
+                        font-size: 12px;
+                    }
+                }
+                .addcart:hover{
+                    transform: scale(1.01);
+                    background-color: rgb(255, 83, 20);
+                }
+            }
+            
+        }
+    }
+    
+    
+    
+}

@@ -1,0 +1,110 @@
+.AddnewAddress{
+    padding: 15px;
+    .title{
+        font-size: 22px;
+        
+    }
+    .top{
+        margin-top: 30px;
+        justify-content: space-between;
+        input{
+            width: 48.5%;
+            height: 45px;
+            text-align: center;
+            border-radius: 5px;
+        }
+    }
+    .bot{
+        margin-top: 20px;
+        input{
+            height: 45px;
+            text-align: center;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .selectBox{
+            user-select: none;
+            height: 220px;
+            border-radius: 5px;
+            margin-top: 5px;
+            border: 1px solid gray;
+
+            .HeaderActive{
+                height: 40px;
+                cursor: pointer;
+                text-align: center;
+                font-size: 17px;
+                color: orangered;
+                width: 35%;
+                border-bottom: 3px solid orangered ;
+            }
+            .Header{
+                height: 40px;
+                text-align: center;
+                cursor: pointer;
+                border-bottom: 2px solid rgb(97, 97, 97) ;
+                font-size: 17px;
+                width: 35%;
+            }
+            .province{
+                text-align: center;
+                max-height: 175px;
+                overflow-y: scroll; 
+                scrollbar-width: none; 
+                -ms-overflow-style: none;
+            }
+            .district{
+                max-height: 175px;
+                text-align: center;
+                overflow-y: scroll; 
+                scrollbar-width: none; 
+                -ms-overflow-style: none;
+            }
+            .commune{
+                max-height: 175px;
+                text-align: center;
+                overflow-y: scroll; 
+                scrollbar-width: none; 
+                -ms-overflow-style: none;
+            }
+        }
+        textarea{
+            margin-top: 20px;
+            max-height: 105px;
+            min-height: 105px;
+            text-align: center;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .ip897{
+            margin-top: 20px;
+            .country{
+                text-align: center;
+            }
+            .zipcodeLabel{
+                width: 30%;
+                text-align: center;
+                font-size: 18px;
+                margin-left: 10px;
+                padding-top: 1.5%;
+            }
+            .zipcodeInput{
+                width: 60%
+            }
+
+        }
+
+        .default{
+            user-select: none;
+            margin-top: 10px;
+            input{
+                width: 20px;
+                cursor: pointer;
+                height: 20px;
+                margin-right: 10px;
+            }
+        }
+    }
+}

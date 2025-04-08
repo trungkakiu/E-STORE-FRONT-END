@@ -1,0 +1,47 @@
+.Usermanagement-container{
+    .Find-header{
+        padding: 10px;
+        .btn{
+            background-color: black;
+            color: white;
+            margin-left: 10px;
+        }
+        
+    }
+    .Body-data{
+        .table{
+            .edit{
+                cursor: pointer;
+                background-color: rgb(209, 255, 209);
+                font-weight: 500;
+                color: rgb(0, 61, 0);
+                border: 1px green solid;
+                transition: transform 0.15s ease;
+            }
+            .edit:hover{
+                transform: scale(1.05);
+            }
+            .remove{
+                cursor: pointer;
+                margin-left: 10px;
+                background-color: rgb(255, 209, 209);
+                font-weight: 500;
+                color: rgb(71, 0, 0);
+                border: 1px rgb(128, 0, 0) solid;
+                transition: transform 0.15s ease;
+            }
+            .remove:hover{
+                transform: scale(1.05);
+            }
+            .btn-disActive{
+                cursor: pointer;
+                background-color: rgb(215, 215, 215);
+                font-weight: 500;
+                color: rgb(46, 46, 46);
+                border: 1px rgb(132, 132, 132) solid;
+                transition: transform 0.15s ease;
+            }
+            
+        }
+    }
+}

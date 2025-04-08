@@ -1,0 +1,215 @@
+.Navbar{
+    position: fixed;
+    border-radius: 20px;
+    margin-left: 1%;
+    width: 21%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+        -3px -3px 5px rgba(255, 255, 255, 0.5);
+    background-color: #FFFFFF;
+    padding: 10px 0px 10px 20px;
+    .Header-nav{
+        padding-left: 5%;
+        padding-top: 3%;
+        padding-bottom: 10%;
+        .header-icon{
+            color: #0085DB;
+            font-size: 30px;
+        }   
+        p{
+            font-size: 22px;
+            margin-left: 5%;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 600;
+        }
+    }
+    .Navbody{
+        max-height: 580px;
+        overflow: hidden;
+        overflow-y: auto;
+        scrollbar-width: thin; 
+        max-height: 78vh;
+        .Home{
+            cursor: pointer;
+            .p1{
+                color: #828282;
+                font-size: 13px;
+            }
+            .homebar{
+                padding-top: 10px;
+                width: 95%;
+                padding-left: 10%;
+                border-radius: 15px;
+                height: 45px;
+                transition: transform 0.4s ease, background-color 0.4s ease;
+                .ic1{
+                    font-size: 22px;
+                    margin-left: 5px;
+                    padding-right: 10%;
+                }
+                .p2{
+                    font-weight: 500;
+                    color: black;
+                }
+            }
+            .homebar:hover{
+                transform: scale(1.015);
+                background-color: #E0F0FB;
+            }
+        }
+
+        .product{
+            
+            cursor: pointer;
+            padding-top: 14%;
+            .p3{
+                color: #828282;
+                font-size: 13px;
+            }
+            .active{
+                
+                .productbar1{
+                    background-color: #E0F0FB;
+                    padding-top: 10px;
+                    width: 95%;
+                    margin-bottom: 10px;
+                    padding-left: 10%;
+                    border-radius: 15px;
+                    height: 45px;
+                    transition:  background-color 0.4s ease;
+                    .ic2{
+                        font-size: 22px;
+                        margin-left: 5px;
+                        padding-right: 10%;
+                        color: orangered;
+                    }
+                    .p4{
+                        
+                        font-weight: 550;
+                        color: black;
+                    }
+                    
+                }
+                .productbar1:hover{
+                    background-color: #E0F0FB;
+                }
+            }
+            .normal{
+                
+                .productbar1{
+                    padding-top: 10px;
+                    width: 95%;
+                    padding-left: 10%;
+                    border-radius: 15px;
+                    margin-bottom: 10px;
+                    height: 45px;
+                    transition: background-color 0.4s ease;
+                    .ic2{
+                        font-size: 22px;
+                        margin-left: 5px;
+                        padding-right: 10%;
+                    }
+                    .p4{
+                        
+                        color: black;
+                    }
+                    
+                }
+                .productbar1:hover{
+                    background-color: #E0F0FB;
+                }
+            }
+            
+        }
+
+        .Acounts{
+
+            cursor: pointer;
+            .p5{
+                color: #828282;
+                font-size: 13px;
+            }
+            .active{
+
+                .Acountbar{
+                    background-color: #E0F0FB;
+                    padding-top: 10px;
+                    width: 95%;
+                    margin-bottom: 10px;
+                    padding-left: 10%;
+                    border-radius: 15px;
+                    height: 45px;
+                    .ic3{
+                        font-size: 22px;
+                        margin-left: 5px;
+                        padding-right: 5%;
+                        color: orangered;
+                    }
+                    .p6{
+                        font-weight: 550;
+                        color: black;
+                    }
+                    
+                }
+                .Acountbar:hover{
+                    background-color: #E0F0FB;
+                }
+            }
+            .normal{ 
+                
+                .Acountbar{
+                    padding-top: 10px;
+                    width: 95%;
+                    margin-bottom: 10px;
+                    padding-left: 10%;
+                    border-radius: 15px;
+                    height: 45px;
+                    transition: background-color 0.4s ease;
+                    .ic3{
+                        font-size: 22px;
+                        margin-left: 5px;
+                        padding-right: 5%;
+                    }
+                    .p6{
+                        
+                    }
+                    
+                }
+                .Acountbar:hover{
+                    background-color: #E0F0FB;
+                }
+            }
+
+        }
+        .setting{
+            padding-top: 10%;
+            cursor: pointer;
+            .p7{
+                color: #828282;
+                font-size: 13px;
+            }
+            .settingbar{
+                padding-top: 10px;
+                width: 95%;
+                padding-left: 9%;
+                border-radius: 15px;
+                height: 45px;
+                transition: transform 0.4s ease, background-color 0.4s ease;
+                .p8{
+                    font-weight: 550;
+                    color: black;
+                    margin-left: -7px;
+                }
+
+                .ic4{
+                    font-size: 19px;
+                    margin-left: 5px;
+                    padding-right: 10%;
+                }
+            }
+            .settingbar:hover{
+                transform: scale(1.015);
+                background-color: #E0F0FB;
+            }
+        }
+    }
+}

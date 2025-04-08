@@ -1,0 +1,229 @@
+.modal{
+    background-color: rgba(0, 0, 0, 0.362);
+    .modal-dialog{
+        align-items: center;
+        justify-content: center;
+       .modal-content{
+        background-color: white;
+       }
+        padding-top: 3%;
+        .modal-body{
+            background-color: white;
+            padding: 0px;
+            height: 80vh;
+            .login-body{
+                .header-modal{
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    .title{
+                        padding-top: 5%;
+
+                        .title_1{
+                            font: 1em sans-serif;
+                            font-size: 20px;
+                            
+                            font-weight: 550;
+                        }
+                        .title_2{
+                            font-size: 13px;
+                            font: 1em sans-serif;
+                            color: rgb(3, 156, 3);
+                        }
+                    }
+                    .icon-header{
+                        padding-top: 3%;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+                        .icon_1{
+                            margin-left: 3%;
+                            text-align: center;
+                            .icon{
+                                height: 50px;
+                                width: 50px;
+                                border-radius: 20px;
+                                padding: 0px;
+                                margin-left: 20px;
+                                background-color: antiquewhite;
+                                .bhr_01{
+                                    margin-top: 8px;
+                                    margin-left: 1px;
+                                }
+                            }
+                            .text-group{
+                                line-height: 0.5;
+                                padding: auto;
+
+                                .pr_01{
+                                    padding-top: 10px;
+                                   
+                                    font-weight: 550;
+                                }
+                            }
+                           
+                        }
+                        .icon_2{
+                            margin-left: 25%;
+                            text-align: center;
+                            .icon{
+                                height: 50px;
+                                width: 50px;
+                                margin-left: 17px;
+                                border-radius: 20px;
+                                padding: 0px;
+                                background-color: antiquewhite;
+                                .bhr_02{
+                                    margin-top: 8px;
+                                    margin-left: 1px;
+
+                                }
+                               
+                            }
+                            .text-group{
+                                line-height: 0.5;
+                                padding: auto;
+
+                                .pr_02{
+                                    padding-top: 10px;
+                                    font-weight: 550;
+                                }
+                            }
+                           
+                        }
+                    }
+                }
+                .input-values{
+                    .form{
+                        padding: 50px;
+                        .lbf_email{
+                            font-weight: 545;
+                        }
+                        .ipf_email_normal_novalue{
+                            margin-top: 1%;
+                            height: 45px;
+                            border-radius: 5px;
+                            background-color: white;
+                            border: 1px solid rgb(165, 165, 165);
+                            transition: border 0.1s ease;
+                            cursor: pointer;
+                        }
+                        .ipf_email_invalid_length{
+                            margin-top: 1%;
+                            height: 45px;   
+                            border-radius: 5px;
+                            background-color: white;
+                            border: 2px solid rgb(255, 0, 0);
+                            transition: border 0.1s ease;
+                            cursor: pointer;
+                        }
+                       
+                        .ipf_email_valid{
+                            margin-top: 1%;
+                            height: 45px;
+                            border-radius: 5px;
+                            background-color: white;
+                            border: 2px solid rgb(0, 157, 21);
+                            transition: border 0.1s ease;
+                            cursor: pointer;
+                        }
+                        .lbf_password{
+                            margin-top: 10px;
+                            font-weight: 545;
+                        }
+                        .ipf_password_normal_novalue{
+                            margin-top: 1%;
+                            height: 45px;
+                            border-radius: 5px;
+                            background-color: white;
+                            border: 1px solid rgb(170, 170, 170);
+                            transition: border 0.1s ease;
+                            cursor: pointer;
+                        }
+                        .ipf_password_invalid_length{
+                            margin-top: 1%;
+                            height: 45px;
+                            border-radius: 5px;
+                            background-color: white;
+                            border: 2px solid rgb(255, 0, 0);
+                            transition: border 0.1s ease;
+                            cursor: pointer;
+                        }
+                       
+                        .ipf_password_valid{
+                            margin-top: 1%;
+                            height: 45px;
+                            border-radius: 5px;
+                            background-color: white;
+                            border: 2px solid rgb(0, 162, 32);
+                            transition: border 0.1s ease;
+                            cursor: pointer;
+                        }
+                        .ipf_password:hover{
+                            border: 1px solid rgb(0, 0, 0);
+                        }
+                        .ipf_repassword_valid{
+                            margin-top: 1%;
+                            height: 45px;
+                            border-radius: 5px;
+                            background-color: white;
+                            border: 2px solid rgb(0, 162, 32);
+                            transition: border 0.1s ease;
+                            cursor: pointer;
+                        }
+                        .ipf_repassword:hover{
+                            border: 1px solid rgb(0, 0, 0);
+                        }
+                        .ipf_repassword_normal_novalue{
+                            margin-top: 1%;
+                            height: 45px;
+                            border-radius: 5px;
+                            background-color: white;
+                            border: 1px solid rgb(170, 170, 170);
+                            transition: border 0.1s ease;
+                            cursor: pointer;
+                        }
+                        .ipf_repassword_invalid_norepeat{
+                            margin-top: 1%;
+                            height: 45px;
+                            border-radius: 5px;
+                            background-color: white;
+                            border: 2px solid rgb(255, 0, 0);
+                            transition: border 0.1s ease;
+                            cursor: pointer;
+                        }
+                        .ipf_repassword_invalid_length{
+                            margin-top: 1%;
+                            height: 45px;
+                            border-radius: 5px;
+                            background-color: white;
+                            border: 2px solid rgb(255, 0, 0);
+                            transition: border 0.1s ease;
+                            cursor: pointer;
+                        }
+                        .btnf_login{
+                            background-color: rgb(255, 88, 28);
+                            height: 45px;
+                            text-align: center;
+                            align-items: center;
+                            justify-content: center;
+                            transition: transform 0.1s ease, background-color 0.1s ease;
+                            margin-top: 20px;
+                            outline: none;
+                            color: white;
+                            border-radius: 25px;
+                            border: 1px solid rgb(255, 84, 22)
+                            
+                        }
+                        .btnf_login:hover{
+                            transform: scale(1.01);
+                            background-color: orangered;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+

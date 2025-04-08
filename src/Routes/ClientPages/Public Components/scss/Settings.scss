@@ -1,0 +1,51 @@
+.setting-contaier{
+   
+    .navbar-setitings{
+        position: fixed;
+        margin-top: 4%;
+        background-color: white;
+        padding-top: 5px;
+        border-radius: 10px;
+        margin-left: -20px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+        -3px -3px 5px rgba(255, 255, 255, 0.5);
+        width: 5%;
+      
+        height: 50vh;
+        .stnb{
+            text-align: center;
+            align-items: center;
+            margin-top: 20px;
+            height: 60px;
+            padding-left: 33%;
+            font-size: 28px;
+            transition: background-color 0.2s ease;
+        }
+        .stnblogout{
+            text-align: center;
+            align-items: center;
+            margin-top: 20px;
+            height: 60px;
+            padding-left: 33%;
+            font-size: 28px;
+            transition: background-color 0.2s ease, color 0.15s ease;
+        }
+        .stnblogout:hover{
+            background-color: rgb(230, 73, 73);
+            color: white;
+        }
+        .stnb:hover{
+            background-color: rgb(186, 254, 254);
+        }
+        .stnbActive{
+            text-align: center;
+            align-items: center;
+            margin-top: 20px;
+            height: 60px;
+            padding-left: 33%;
+            font-size: 28px;
+            color: rgb(203, 54, 0);
+            background-color: rgb(177, 255, 255);
+        }
+    }
+}

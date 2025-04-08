@@ -1,0 +1,73 @@
+.Support-container{
+    padding: 10px;
+    width: "700px";
+    .upHeader{
+        user-select: none;
+        text-align: center;
+        .div8s{
+            padding-left: 35%;
+            padding-top: 5%;
+            .icKsk{
+                font-size: 40px;
+                padding-right: 10px;
+            }
+            p{
+                color: rgb(0, 0, 0);
+                font-size: 22px;
+            }
+        }
+        p{
+            font-size: 16px;
+            font-weight: 500;
+            color: rgb(128, 128, 128);
+        }
+    }
+    .bodyCT{
+        padding-top: 40px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        .mail{
+            margin-right: 20px;
+            cursor: pointer;
+            p{
+                font-weight: 500;
+            }
+            .icon{
+                color: rgb(208, 55, 0);
+                margin-right: 5px;
+                font-size: 26px;
+            }
+        }
+        .phone{
+            margin-right: 20px;
+            cursor: pointer;
+            p{
+                margin-right: 5px;
+                font-weight: 500;
+            }
+            .icon{
+                color: rgb(208, 55, 0);
+                margin-right: 5px;
+                font-size: 26px;
+            }
+        }
+        .facebook{
+            cursor: pointer;
+         
+            margin-right: 20px;
+            border-radius: 10px;
+           
+            p{
+              
+                font-weight: 500;
+            }
+            .icon{
+                color: rgb(208, 55, 0);
+                margin-right: 5px;
+                font-size: 26px;
+            }
+        }
+    
+    }
+}

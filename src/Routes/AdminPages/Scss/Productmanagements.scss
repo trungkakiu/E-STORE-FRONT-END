@@ -1,0 +1,80 @@
+.Prt-container{
+    padding-top: 8%;
+    width: 98.5%;
+    border-radius: 20px;
+    
+    .dashboard{
+        height: 80vh;
+        border-radius: 20px;
+        background-color: white;
+        .topcontent{
+            user-select: none;
+            padding-left: 5%;
+            padding-top: 10px;
+            .choose{
+                background-color: rgb(216, 255, 255);
+
+            }
+            .bar{
+                text-align: center;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+              -3px -3px 5px rgba(255, 255, 255, 0.5);
+                margin: 10px;
+                border-radius: 15px;
+                width: 30%;
+                height: 100px;
+            }
+            .allproduct{
+                cursor: pointer;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                .p9123{
+                    font-weight: 550;
+                    font-size: 18px;
+                }
+                .p7712{
+                    margin-left: 10%;
+                    padding: 10px;
+                    color: white;
+                    background-color: orangered;
+                    border-radius: 15px;
+                    width: 80%;
+                    font-weight: 450;
+                }
+            }
+            .sellinday{
+                cursor: pointer;
+                .p0122{
+                    font-weight: 550;
+                    font-size: 18px;
+                }
+                .p7871{
+                    margin-left: 10%;
+                    padding: 10px;
+                    color: white;
+                    background-color: orangered;
+                    border-radius: 15px;
+                    width: 80%;
+                    font-weight: 450;
+                }
+            }
+            .orderinday{
+                cursor: pointer;
+                .p7299{
+                    font-weight: 550;
+                    font-size: 18px;
+                }
+                .p6129{
+                    margin-left: 10%;
+                    padding: 10px;
+                    color: white;
+                    background-color: orangered;
+                    border-radius: 15px;
+                    width: 80%;
+                    font-weight: 450;
+                }
+            }
+        }
+    }
+}

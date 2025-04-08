@@ -1,0 +1,199 @@
+.custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1050;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.fade-in {
+        .custom-modal-backdrop {
+            animation: fadeInBackdrop 0.1s ease-in-out forwards;
+        }
+        .custom-modal-content {
+            animation: fadeInContent 0.1s ease-in-out forwards;
+        }
+    }
+
+    &.fade-out {
+        .custom-modal-backdrop {
+            animation: fadeOutBackdrop 0.1s ease-in-out forwards;
+        }
+        .custom-modal-content {
+            animation: fadeOutContent 0.1s ease-in-out forwards;
+        }
+    }
+
+    .custom-modal-backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0);
+        backdrop-filter: blur(20px);
+        opacity: 0;
+    }
+
+    .custom-modal-content {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.263);
+        backdrop-filter: blur(2px);
+        width: 90%;
+        max-width: 1200px;
+        max-height: 80vh;
+        border-radius: 10px;
+        padding: 20px;
+        overflow-y: scroll; 
+        scrollbar-width: none; 
+        -ms-overflow-style: none;
+        z-index: 10;
+        opacity: 0; 
+        transform: scale(0.9);
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            z-index: 11;
+        }
+
+        .EditPT-container {
+            width: 100%;
+            padding: 10px;
+            padding-left: 20px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            overflow-y: scroll;
+            height: 100%;
+            gap: 20px;
+            max-height: 100%;
+            position: relative;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .other-img {
+                width: 12.5rem;
+                height: 11rem;
+                object-fit: contain;
+                border-radius: 10px;
+            }
+            .image-placeholder{
+                border-radius: 10px;
+                width: 12.5rem;
+                height: 11rem;
+                .loading-spinner{
+                    text-align: center;
+                    align-items: center;
+                    padding-top: 25%;
+                    color: white;
+                    .ic8s{
+                        animation: spin 2s linear infinite;
+                        font-size: 35px;
+                    }
+                }
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    50% {transform: rotate(180deg);}
+                    100% { transform: rotate(360deg); }
+                }
+            }
+            
+            .ic {
+                position: absolute;
+                top: -2px;
+                right: 5px;
+                color: white;
+                background: red;
+                border-radius: 50%;
+                padding: 5px;
+                cursor: pointer;
+                font-size: 18px;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 20px;
+                height: 20px;
+                transition: background-color 0.1s ease;
+            }
+
+            .ic:hover {
+                background: darkred;
+            }
+
+            .setdf{
+                user-select: none;
+                cursor: pointer;
+                position: absolute;
+                top: 151px;
+                right: 86px;
+                width: 80px;
+                height: 25px;
+                border: 2px solid green;
+                border-top-right-radius: 10px;
+                background-color: rgb(80, 212, 57);
+                transition: transform 0.1s ease;
+                p{
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+            }
+            .setdf:hover{
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+
+@keyframes fadeInBackdrop {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.8;
+    }
+}
+
+@keyframes fadeOutBackdrop {
+    from {
+        opacity: 0.8;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOutContent {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}

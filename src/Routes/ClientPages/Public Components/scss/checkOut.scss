@@ -1,0 +1,103 @@
+.checkout-container{
+    width: 80%;
+    padding-top: 20px;
+    margin-left: 10%;
+    height: 100%;
+    .checkout-header{
+        width: 100%;
+        height: 110px;
+        background-color: white;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+        -3px -3px 5px rgba(255, 255, 255, 0.5);
+        border-top: 2px dashed orangered;
+        padding: 20px;
+
+        .top{
+            .icon{
+                font-size: 25px;
+                color: orangered;
+            }
+            p{
+                font-size: 17px;
+                font-weight: 500;
+                color: orangered;
+                margin-left: 10px;
+               
+            }
+        }
+    }
+
+    .checkOut-contents{
+       
+        .header{
+            margin-top: 20px;
+            background-color: white;
+            padding-top: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+                -3px -3px 5px rgba(255, 255, 255, 0.5);
+        }
+        .contents{
+            .itemCart{
+                background-color: white;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+                -3px -3px 5px rgba(255, 255, 255, 0.5);
+                height: 350px;
+                padding: 20px;
+                margin-bottom: 20px;
+                img{
+                    object-fit: contain;
+                }
+                p{
+                   justify-content: center;
+                   align-items: center;
+                   margin-top: 20px;
+                  
+                }
+                .voucher{
+                    margin-top: 10px;
+                    width: 100%;
+                    border-top: 3px dashed rgb(207, 232, 255);
+                    border-bottom: 3px dashed rgb(207, 232, 255);
+                    background-color: rgb(245, 250, 255) ;
+                    padding: 10px;
+                    text-align: center;
+                    justify-content: space-between;
+                    align-items: center;
+                    .icon{
+                        margin-left: 550px;
+                        margin-top: 20px;
+                        margin-right: 10px;
+                        font-size: 30px;
+                    }
+                    .p009s{
+                        font-size: 20px;
+                        
+                    }
+                }
+                .bottom{
+                    background-color:  rgb(245, 250, 255);
+                    height: 120px;
+                    .note{
+                        border-right: 3px dashed rgb(207, 232, 255);
+                        width: 40%;
+                        padding: 10px;
+                        label{
+                            width: 100%;
+                            
+                        }
+                        textarea{
+                            width: 90%;
+                            max-height: 70px;
+                            min-height: 70px;
+                        }
+                    }
+                    .final{
+
+                    }
+                    border-bottom: 3px dashed rgb(207, 232, 255);
+                }
+ 
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.UserProfile-container{
+    width: 100%;
+    padding: 2%;
+    height: 100%;
+    background-color: #F0F5F9;
+    .usernavbar-Contents{
+        background-color: #FFFFFF;
+        position: fixed;
+        height: 70vh;
+        width: 5%;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+        -3px -3px 5px rgba(255, 255, 255, 0.5);
+        border-radius: 20px;
+        padding-top: 2%;
+        .active{
+            justify-content: center;
+            height: 70px;
+            align-items: center;
+            text-align: center;
+            margin-top: 14px;
+            background-color: rgb(189, 255, 255);
+            .ic{
+                color: rgb(126, 50, 0);
+                padding-top: 20%;
+                font-size: 30px;
+                
+            }
+        }
+        .tag{
+            justify-content: center;
+            height: 70px;
+            align-items: center;
+            text-align: center;
+            margin-top: 14px;
+            transition: background-color 0.2s ease;
+            .ic{
+                color: rgb(255, 119, 29);
+                padding-top: 20%;
+                font-size: 30px;
+                
+            }
+        }
+        .tag:hover{
+            background-color: rgb(207, 255, 255);
+        }
+        
+    }
+    .topic-contents{
+        margin-left: 10%;
+        width: 90%;
+        background-color: #F0F5F9;
+    }
+}

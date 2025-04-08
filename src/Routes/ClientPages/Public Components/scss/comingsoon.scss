@@ -1,0 +1,18 @@
+.coming-soon-container{
+    margin-left: 12%;
+    background-color: white;
+    width: 1000px;
+    height: 500px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+    -3px -3px 5px rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    justify-content: center;
+    text-align: center;
+    .contents{
+        padding-top: 20%;
+        p{
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.Loading-container{
+    height: 90vh;
+    text-align: center;
+    padding-top: 15%;
+    .Loading-icon{
+        animation: spin 2s linear infinite;
+        font-size: 60px;
+    }
+    .body{
+        p{
+            font-weight: 600;
+            font-size: 20px;
+        }
+    }
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
