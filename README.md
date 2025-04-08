@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## const showToast = (id, message, type) => {
         if (toast.isActive(id)) {
           toast.update(id, {
@@ -40,3 +41,7 @@
 ## box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
     -3px -3px 5px rgba(255, 255, 255, 0.5);
 // shadow
+=======
+# E-STORE-FRONT-END
+The front-end project clone TEMU SHOPPEE and some thing web other 
+>>>>>>> 6fb886882f7d3aa8595d79f2fbbf00a4dada4d91
