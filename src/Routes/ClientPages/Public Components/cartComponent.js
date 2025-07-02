@@ -14,92 +14,110 @@ import LoadingPage from './LoadingPage'
 import { toast, ToastContainer } from 'react-toastify';
 
 const CartComponent = () => {
-  const IMGPATH = process.env.REACT_APP_IMG_APP_PATH;
-  const { cart, AddCart, RemoveCart , fetchCart, RemoveItem } = useContext(CartContext);
-  const { user, login, logout } = useContext(UserContext);
-  const [loginModalup, setloginModal] = useState(false);
-  const [visibleCount, setVisibleCount] = useState(12);
-  const { products, category, addProduct, removeProduct, updateProduct, fetchProducts, fecthCategory } = useContext(ProductContext);
-  const visibleProducts = products.slice(0, visibleCount);
-  const [selectedItems, setSelectedItems] = useState([]);
-  const [AddLoading, setAddLoading] = useState({});
-  const [loadingItems, setLoadingItems] = useState({});
-  const navigate = useNavigate();
-  const loadingDefautl = {
-    dataLoading: true,
-    ImgLoading: true
-  }
-  const [loading, setLoading] = useState(loadingDefautl);
-  const PriceDefault = {
-        RealPrice: 0,
-        SalePrice: 0
-  }
+    const IMGPATH = process.env.REACT_APP_IMG_APP_PATH;
+    const { cart, AddCart, RemoveCart , fetchCart, RemoveItem } = useContext(CartContext);
+    const { user, login, logout } = useContext(UserContext);
+    const [loginModalup, setloginModal] = useState(false);
+    const [visibleCount, setVisibleCount] = useState(12);
+    const { products, category, addProduct, removeProduct, updateProduct, fetchProducts, fecthCategory } = useContext(ProductContext);
+    const visibleProducts = products.slice(0, visibleCount);
+    const [selectedItems, setSelectedItems] = useState([]);
+    const [AddLoading, setAddLoading] = useState({});
+    const [loadingItems, setLoadingItems] = useState({});
+    const navigate = useNavigate();
+    const loadingDefautl = {
+      dataLoading: true,
+      ImgLoading: true
+    }
+    const [loading, setLoading] = useState(loadingDefautl);
+    const PriceDefault = {
+          RealPrice: 0,
+          SalePrice: 0
+    }
 
-  useEffect(() => {
-      const loadData = async () => {
-          setLoading(prev => ({ ...prev, dataLoading: true }));
-          if (user?.Authen) {
-              await fetchCart(user.token);
-              await fetchProducts();
-          }
-          setLoading(prev => ({ ...prev, dataLoading: false }));
-      };
-      loadData();
-  }, [user]);
-
-  const openModal = (code) =>{
-      if(code ==="login"){
-          setloginModal(true)
-      }
-  }
-  const closeModal = (code) => {
-      if (code === "login") {
-          setloginModal(false);
+    const showToast = (id, message, type, containerId) => {
+      if (toast.isActive(id)) {
+        toast.update(id, {
+          render: message,
+          type,
+          containerId: containerId,
+          autoClose: 5000, 
+          closeOnClick: true
+        });
+      } else {
+        toast[type](message, {
+          toastId: id,
+          containerId: containerId
+        });
       }
   };
 
-  useEffect(() => {
-    if (user?.Authen && user?.token) {
-      fetchCart(user.token);
+    useEffect(() => {
+        const loadData = async () => {
+            setLoading(prev => ({ ...prev, dataLoading: true }));
+            if (user?.Authen) {
+                await fetchCart(user.token);
+                await fetchProducts();
+            }
+            setLoading(prev => ({ ...prev, dataLoading: false }));
+        };
+        loadData();
+    }, [user]);
+
+    const openModal = (code) =>{
+        if(code ==="login"){
+            setloginModal(true)
+        }
     }
-  }, []);
-
-
-  const handleCheckboxChange = (productId) => {
-    setSelectedItems((prevSelected) => {
-      const isSelected = prevSelected.includes(productId);
-      if (isSelected) {
-        return prevSelected.filter(id => id !== productId); 
-      } else {
-        return [...prevSelected, productId]; 
-      }
-    });
-  };
-
-  const orderSummary = useMemo(() => {
-    if (!cart || !Array.isArray(cart)) {
-      return { total: "0", discount: "0" };
-    }
-  
-    let totalPrice = 0;
-    let discountPrice = 0;
-    cart.forEach(item => {
-      if (item && item.product && selectedItems.includes(item.product.id)) {
-        totalPrice += item.product.price * item.quantity;
-        discountPrice += (item.product.price * item.product.discount / 100) * item.quantity;
-      } else {
-        console.warn(`Item with ID ${item?.id || "unknown"} has null or undefined product`);
-      
-      }
-    });
-  
-    return {
-      total: totalPrice.toLocaleString("vi-VN"),
-      discount: discountPrice.toLocaleString("vi-VN"),
-      lastTotal: (totalPrice - discountPrice).toLocaleString("vi-VN")
+    const closeModal = (code) => {
+        if (code === "login") {
+            setloginModal(false);
+        }
     };
-  }, [selectedItems, cart]);
+
+    useEffect(() => {
+      if (user?.Authen && user?.token && user.data.is_active) {
+        fetchCart(user.token);
+      }
+    }, []);
+
+ 
+
+    const handleCheckboxChange = (productId) => {
+      setSelectedItems((prevSelected) => {
+        const isSelected = prevSelected.includes(productId);
+        if (isSelected) {
+          return prevSelected.filter(id => id !== productId); 
+        } else {
+          return [...prevSelected, productId]; 
+        }
+      });
+    };
+
+    const orderSummary = useMemo(() => {
+      if (!cart || !Array.isArray(cart)) {
+        return { total: "0", discount: "0" };
+      }
     
+      let totalPrice = 0;
+      let discountPrice = 0;
+      cart.forEach(item => {
+        if (item && item.product && selectedItems.includes(item.product.id)) {
+          totalPrice += item.product.price * item.quantity;
+          discountPrice += (item.product.price * item.product.discount / 100) * item.quantity;
+        } else {
+          console.warn(`Item with ID ${item?.id || "unknown"} has null or undefined product`);
+        
+        }
+      });
+    
+      return {
+        total: totalPrice.toLocaleString("vi-VN"),
+        discount: discountPrice.toLocaleString("vi-VN"),
+        lastTotal: (totalPrice - discountPrice).toLocaleString("vi-VN")
+      };
+    }, [selectedItems, cart]);
+        
     const handleAddToCart = async (productId) => {
 
       if (!user?.data?.id || !user?.token) {
@@ -111,20 +129,26 @@ const CartComponent = () => {
           (prev) => ({...prev, [productId]: true})
         )
         const response = await AddCart(productId, user.data.id, user.token);
+        console.log(response);
         if (response.status === 201) {
           setAddLoading(
             (prev) => ({...prev, [productId]: true})
           )
-          toast.success("Thêm vào giỏ hàng thành công! 🛒");
+          showToast("success" , "Thêm vào giỏ hàng thành công! 🛒", "success", "CartComp")
            setAddLoading(
           (prev) => ({...prev, [productId]: false})
         )
-        } else {
-          toast.error("Lỗi khi thêm sản phẩm vào giỏ hàng! ❌");
+        } else if(response.status === 403){
+          showToast("Error" , "Your account has been banned! ❌", "error", "CartComp")
+          logout({
+            onForceLogout: () => {
+              openModal("login", "There has been a change in permissions please log in again!");
+          }
+          });
         }
       } catch (error) {
         console.error(error);
-        toast.error("Lỗi server, vui lòng thử lại sau! 🚨");
+        return;
       }
     };
 
@@ -139,10 +163,12 @@ const CartComponent = () => {
         const response = await ResfulAPI.UpdateQuanity(CartID, quantity, user?.token);
         await fetchCart(user.token);
         if (response.status === 200) {
-          toast.success("Cập nhật số lượng thành công!");
+          showToast("success" , "Update product quantity complete ✅", "success", "CartComp")
+          return;
         }
         if (response?.status === 400) {
-          toast.error("Sản phẩm trong kho đạt giới hạn 💀");
+          showToast("error" , "Max stock !", "error", "CartComp")
+          return;
         }
       } catch (error) {
         console.error(error);
@@ -163,26 +189,24 @@ const CartComponent = () => {
           setLoading(
             (prev)=>({...prev, dataLoading: false})
           )
-          toast.success("Remove complete ✅");
+          showToast("success" , "Remove complete ✅", "success", "CartComp")
           return;
         }
       } catch (error) {
         console.error("Lỗi Axios:", error);
-      
         if (error.response) {
-          console.log("Lỗi API:", error.response.data);
-          console.log("Mã lỗi:", error.response.status);
       
           if (error.response.status === 400) {
-            toast.error(error.response.data?.message || "Sản phẩm trong kho đạt giới hạn 💀");
+            showToast("error" ,  "Sản phẩm trong kho đạt giới hạn 💀", "error", "CartComp")
             return;
           }
         } else if (error.request) {
           console.error("Request đã gửi nhưng không nhận phản hồi từ server:", error.request);
-          toast.error("Không nhận được phản hồi từ server ❌");
+          showToast("error" ,  "Không nhận được phản hồi từ server ❌", "error", "CartComp")
+          return;
         } else {
-          console.error("Lỗi không liên quan đến request:", error.message);
-          toast.error("Lỗi không xác định 🚨");
+          showToast("error" ,"Lỗi không liên quan đến request", "error", "CartComp")
+          return;
         }
       }
     }
@@ -193,10 +217,12 @@ const CartComponent = () => {
     const handleRedirect = () =>{
 
       const cartCheckout = cart.filter(c => selectedItems.includes(c.product.id));
-      console.log(cartCheckout)
-      navigate("/cart/checkOut", { state: { order: cartCheckout } }); 
+      if(cartCheckout.length === 0){
+        toast.warning("Please select the product you want to buy 🐰");
+      }else{
+        navigate("/cart/checkOut", { state: { order: cartCheckout } }); 
+      }
     }
-
 
     if (loading.dataLoading || (!cart)) {
       return (
@@ -206,7 +232,7 @@ const CartComponent = () => {
     
   return (
     <div className='cart-contents row'>
-      <ToastContainer/>
+      <ToastContainer containerId={"CartComp"}/>
       <LoginModal show={loginModalup} close={()=>closeModal("login")}/>
         <div className='price'>
           <div className='checkout'>
@@ -228,10 +254,6 @@ const CartComponent = () => {
             <div onClick={handleRedirect} className='checkout-btn' style={{marginBottom: "20px"}}>
                 Checkout now
             </div>
-            
-          </div>
-          <div>
-            
           </div>
         </div>
         <div className='cart_left'>
@@ -368,17 +390,27 @@ const CartComponent = () => {
                               <p className='realPrice'>{`đ${item.price.toLocaleString("vi-VN")}`}</p>
                               </div>
                              </div>
-                             <button disabled={!AddLoading} style={{cursor: "pointer"}} onClick={() => handleAddToCart(item.id)} className='addCart'>
-                              {
-                                AddLoading[item.id]? (
-                                  <div style={{fontSize: "20px"}}>
-                                    Loading...
-                                  </div>
-                                ):(
-                                  <FontAwesomeIcon icon={faCartArrowDown}/>)
-                              }
+                             {
+                              item.stock != 0 ? (
+                                <button disabled={!AddLoading} style={{cursor: "pointer"}} onClick={() => handleAddToCart(item.id)} className='addCart'>
+                                  {
+                                    AddLoading[item.id]? (
+                                      <div style={{fontSize: "20px"}}>
+                                        Loading...
+                                      </div>
+                                    ):(
+                                      <FontAwesomeIcon icon={faCartArrowDown}/>)
+                                  }
+                                
+                                </button>
+                              ) : (
+
+                                <button style={{cursor: "not-allowed"}} className='addCartOutStock'>
+                                   Out stock !
+                                </button>
+                              )
+                             }
                              
-                            </button>
                           </div>
                      </div>
                     )

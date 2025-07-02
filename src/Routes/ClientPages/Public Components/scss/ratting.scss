@@ -1,0 +1,56 @@
+.Ratting{
+    width: 55%;
+    border: 2px dashed rgb(54, 136, 136);
+    background-color: rgb(248, 255, 255);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    justify-content: center;
+    .coments{
+        width: 60%;
+        p{
+            font-size: 18px;
+            font-weight: 500;
+        }
+        textarea{
+            min-height: 60px;
+            width: 80%;
+            border-radius: 5px;
+            border: 2px solid black;
+            max-height: 60px;
+        }
+    }
+    .existing-rating{
+        .starRating{
+
+        }
+        .coments{
+            
+        }
+    }
+    .starRating{
+        width: 40%;
+        p{
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .Star{
+            font-size: 25px;
+            margin-top: 10px;
+        }
+        .Staractive{
+            font-size: 25px;
+            margin-top: 10px;
+            color: rgb(239, 239, 0);
+        }
+    }
+    .option{
+        margin-bottom: 10px;
+        margin-top: 10px;
+        .btn{
+            
+            border: 2px solid rgba(18, 158, 0, 0.641);
+            background-color: rgb(46, 238, 46);
+        }
+    }
+}

@@ -1,0 +1,90 @@
+.linktodetail {
+  text-decoration: none;
+  flex: 2;
+  .card {
+    height: 400px;
+    width: 250px;
+    margin-top: 10px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.142);
+    }
+
+    .loading-spinner {
+      padding-top: 40%;
+      font-size: 30px;
+
+      .ic8s {
+        animation: spin 2s linear infinite;
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .card-img-top {
+      transition: transform 0.2s ease;
+    }
+
+    .card-img-top:hover {
+      transform: scale(1.1);
+    }
+
+    .card-body {
+      padding: 10px;
+      flex-direction: column;
+      display: flex;
+      gap: 20px;
+      .PrdName {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 19px;
+        max-width: 100%;
+      }
+
+      .divoois {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+
+        .Sold_counts {
+          font-size: 14px;
+          flex: 2;
+        }
+
+        .prdPrice {
+          color: red;
+          font-size: 18px;
+          flex: 3;
+        }
+
+        .addtocart {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 5px;
+          cursor: pointer;
+          color: white;
+          padding: 5px;
+          background-color: orangered;
+          flex: 2;
+        }
+      }
+    }
+  }
+}

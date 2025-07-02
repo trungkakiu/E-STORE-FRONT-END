@@ -2,6 +2,7 @@
     width: 100%;
     padding: 2%;
     height: 100%;
+    min-height: 84vh;
     background-color: #F0F5F9;
     .usernavbar-Contents{
         background-color: #FFFFFF;
@@ -48,6 +49,7 @@
     .topic-contents{
         margin-left: 10%;
         width: 90%;
+        height: 100%;
         background-color: #F0F5F9;
     }
 }

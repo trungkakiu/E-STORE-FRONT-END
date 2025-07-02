@@ -4,10 +4,25 @@
     margin-left: 1%;
     width: 21%;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
-        -3px -3px 5px rgba(255, 255, 255, 0.5);
+    -3px -3px 5px rgba(255, 255, 255, 0.5);
     background-color: #FFFFFF;
     padding: 10px 0px 10px 20px;
     .Header-nav{
+        padding-left: 5%;
+        padding-top: 3%;
+        padding-bottom: 10%;
+        .header-icon{
+            color: #0085DB;
+            font-size: 30px;
+        }   
+        p{
+            font-size: 22px;
+            margin-left: 5%;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 600;
+        }
+    }
+    .Header-nav-active{
         padding-left: 5%;
         padding-top: 3%;
         padding-bottom: 10%;
@@ -34,27 +49,57 @@
                 color: #828282;
                 font-size: 13px;
             }
-            .homebar{
-                padding-top: 10px;
-                width: 95%;
-                padding-left: 10%;
-                border-radius: 15px;
-                height: 45px;
-                transition: transform 0.4s ease, background-color 0.4s ease;
-                .ic1{
-                    font-size: 22px;
-                    margin-left: 5px;
-                    padding-right: 10%;
+
+            .active{
+                
+                .homebar{
+                    padding-top: 10px;
+                    width: 95%;
+                    padding-left: 10%;
+                    background-color: #E0F0FB;
+                    border-radius: 15px;
+                    height: 45px;
+                    transition: transform 0.4s ease, background-color 0.4s ease;
+                    .ic1{
+                        font-size: 22px;
+                        margin-left: 5px;
+                        color: orangered;
+                        padding-right: 10%;
+                    }
+                    .p2{
+                        font-weight: 500;
+                        color: black;
+                    }
                 }
-                .p2{
-                    font-weight: 500;
-                    color: black;
+                .homebar:hover{
+                    transform: scale(1.015);
+                    background-color: #E0F0FB;
                 }
             }
-            .homebar:hover{
-                transform: scale(1.015);
-                background-color: #E0F0FB;
+            .normal{
+                .homebar{
+                    padding-top: 10px;
+                    width: 95%;
+                    padding-left: 10%;
+                    border-radius: 15px;
+                    height: 45px;
+                    transition: transform 0.4s ease, background-color 0.4s ease;
+                    .ic1{
+                        font-size: 22px;
+                        margin-left: 5px;
+                        padding-right: 10%;
+                    }
+                    .p2{
+                        font-weight: 500;
+                        color: black;
+                    }
+                }
+                .homebar:hover{
+                    transform: scale(1.015);
+                    background-color: #E0F0FB;
+                }
             }
+            
         }
 
         .product{
@@ -121,6 +166,64 @@
             
         }
 
+        .Order{
+            cursor: pointer;
+            padding-top: 14%;
+            .p7n{
+                color: #828282;
+                font-size: 13px;
+            }
+            .active{
+                .orderbar{
+                    background-color: #E0F0FB;
+                    padding-top: 10px;
+                    width: 95%;
+                    margin-bottom: 10px;
+                    padding-left: 10%;
+                    border-radius: 15px;
+                    height: 45px;
+                    .ic4n{
+                        font-size: 22px;
+                        margin-left: 5px;
+                        padding-right: 8%;
+                        color: orangered;
+                    }
+                    .p8n{
+                        font-weight: 550;
+                        color: black;
+                    }
+                    
+                }
+               
+            }
+            .normal{
+               
+                .orderbar{
+                    padding-top: 10px;
+                    width: 95%;
+                    padding-left: 10%;
+                    border-radius: 15px;
+                    margin-bottom: 10px;
+                    height: 45px;
+                    transition: background-color 0.4s ease;
+                    .ic4n{
+                        font-size: 22px;
+                        margin-left: 5px;
+                        padding-right: 8%;
+                    }
+                    .p8n{
+                        
+                        color: black;
+                    }
+                    
+                }
+                .orderbar:hover{
+                    background-color: #E0F0FB;
+                }
+            }
+           
+        }
+
         .Acounts{
 
             cursor: pointer;
@@ -129,13 +232,12 @@
                 font-size: 13px;
             }
             .active{
-
                 .Acountbar{
                     background-color: #E0F0FB;
                     padding-top: 10px;
                     width: 95%;
                     margin-bottom: 10px;
-                    padding-left: 10%;
+                    padding-left: 8% !important;
                     border-radius: 15px;
                     height: 45px;
                     .ic3{
@@ -160,7 +262,7 @@
                     padding-top: 10px;
                     width: 95%;
                     margin-bottom: 10px;
-                    padding-left: 10%;
+                    padding-left: 8% !important;
                     border-radius: 15px;
                     height: 45px;
                     transition: background-color 0.4s ease;
@@ -190,7 +292,7 @@
             .settingbar{
                 padding-top: 10px;
                 width: 95%;
-                padding-left: 9%;
+                padding-left: 10%;
                 border-radius: 15px;
                 height: 45px;
                 transition: transform 0.4s ease, background-color 0.4s ease;

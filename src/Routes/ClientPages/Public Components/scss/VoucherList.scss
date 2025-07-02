@@ -1,0 +1,143 @@
+.VoucherList{
+    height: 100%;
+    .VCbody{
+        padding: 0px 10px;
+        margin-top: 10px;
+        min-height: 90%;
+        max-height: 90%;
+        user-select: none;
+        overflow-y: scroll; 
+        scrollbar-width: none; 
+        -ms-overflow-style: none;
+        margin-bottom: 10px;
+        .item{
+            position: relative;
+            padding: 0px 5px;
+            width: 100%;
+            margin-bottom: 10px;
+            height: 95px;
+            border-radius: 5px;
+            border: 2px dashed rgb(69, 190, 255);
+            background-color: rgb(245, 255, 255);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.02);
+                background-color:  rgb(211, 229, 229);
+            }
+
+            .invalid{
+                user-select: none;
+                position: absolute;
+                cursor: not-allowed;
+                width: 100%;
+                border-radius: 5px;
+                height: 100%;
+                background-color: rgba(164, 164, 164, 0.551);
+                color: white;
+                text-align: center;
+                margin-left: -5px;
+                padding-top: 5%;
+                font-size: 20px;
+                font-weight: 500;
+            }
+            .icon{
+                width: 22%;
+                padding-top: 2px;
+                height: 100%;
+                color: rgb(88, 243, 243);
+            }
+            .remove{
+                cursor: pointer;
+                position: absolute;
+                color: red;
+                opacity: 0.5;
+                font-size: 20px;
+            }
+            .remove:hover{
+                opacity: 1;
+                animation: shake 1s linear infinite;
+            }
+            @keyframes shake {
+                0% { transform: translateX(0); }
+                25% { transform: translateX(-4px) rotate(-10deg); }
+                50% { transform: translateX(4px) rotate(10deg); }
+                75% { transform: translateX(-4px) rotate(-10deg); }
+                100% { transform: translateX(0); }
+            }
+            .contents{
+                margin-left: 10px;
+                margin-top: 10px;
+                width: 100% - 22%;
+                .top{
+                    justify-content: space-between;
+                    .dis{
+                        background-color: orangered;
+                        padding: 3px;
+                        color: white;
+                        border-radius: 2px;
+                    }
+                }
+                .bot{
+                    justify-content: space-between;
+                }
+            }
+        }
+        .itemExprice {
+            position: relative;
+            padding: 5px;
+            width: 33%;
+            height: 95px;
+            border-radius: 5px;
+            border: 2px dashed rgb(114, 114, 114);
+            background-color: rgb(241, 241, 241);
+            
+            .icon{
+                width: 22%;
+                padding-top: 2px;
+                height: 100%;
+                color: rgb(175, 204, 204);
+            }
+            .remove{
+                cursor: pointer;
+                position: absolute;
+                color: red;
+                opacity: 0.5;
+                font-size: 20px;
+            }
+            .remove:hover{
+                opacity: 1;
+                animation: shake 1s linear infinite;
+            }
+            @keyframes shake {
+                0% { transform: translateX(0); }
+                25% { transform: translateX(-4px) rotate(-10deg); }
+                50% { transform: translateX(4px) rotate(10deg); }
+                75% { transform: translateX(-4px) rotate(-10deg); }
+                100% { transform: translateX(0); }
+            }
+            .contents{
+                margin-left: 10px;
+                margin-top: 10px;
+                width: 100% - 22%;
+                .top{
+                    justify-content: space-between;
+                    .dis{
+                        background-color: rgb(212, 187, 178);
+                        padding: 3px;
+                        color: white;
+                        border-radius: 2px;
+                    }
+                }
+                .bot{
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+    .Option{
+        padding-left: 10px;
+        padding-top: 5px;
+        border-top: 2px solid rgb(182, 182, 182) ;
+    }
+}

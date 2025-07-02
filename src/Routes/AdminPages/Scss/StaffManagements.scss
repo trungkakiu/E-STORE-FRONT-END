@@ -69,16 +69,29 @@
             gap: 10px;
           
             .StaffCard {
+
                 cursor: pointer;
                 margin-bottom: 10px;
                 background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
                 background-size: 300% 100%; 
                 border-radius: 5px;
+                position: relative;
                 transition: transform 0.2s ease;
                 box-shadow: 0 4px rgba(0, 0, 0, 0.01),
                             0 6px 12px rgba(0, 0, 0, 0.1);
                 animation: rainbowMove 15s linear infinite; 
             
+                .lock{
+                    position: absolute;
+                    font-size: 30px;
+                    color: red;
+                }
+                            
+                .unlock{
+                    position: absolute;
+                    font-size: 30px;
+                    color: green;
+                }
                 .topcard img {
                     padding-top: 10px;
                 }
@@ -110,6 +123,51 @@
             
             .StaffCard:hover{
                 transform: scale(1.02);
+            }
+            .StaffCardLock{
+                cursor: pointer;
+                margin-bottom: 10px;
+                background-color: gray;
+                opacity: 0.6;
+                background-size: 300% 100%; 
+                border-radius: 5px;
+                position: relative;
+                transition: transform 0.2s ease;
+                box-shadow: 0 4px rgba(0, 0, 0, 0.01),
+                            0 6px 12px rgba(0, 0, 0, 0.1);
+                animation: rainbowMove 15s linear infinite; 
+            
+                .lock{
+                    position: absolute;
+                    font-size: 30px;
+                    color: red;
+                    &:hover{
+                        transform: scale(1.06);
+                    }
+                }
+                            
+                .topcard img {
+                    padding-top: 10px;
+                }
+                .bodycard {
+                    margin-top: 5px;
+                    border: 2px solid rgb(97, 97, 97);
+                    border-radius: 2px;
+                    background-color: white;
+                    padding-top: 10px;
+                    text-align: center;
+                    line-height: 1;
+                    margin-bottom: 10px;
+                    .Fullname{
+                        font-weight: 500;
+                    }
+                    .username{
+                        font-size: 12px;
+                        color: gray;
+                        font-weight: 500;
+                    }
+                }
+               
             }
 
         }

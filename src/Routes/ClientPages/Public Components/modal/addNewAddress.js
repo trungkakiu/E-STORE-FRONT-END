@@ -129,7 +129,7 @@ const AddnewAddress = ({ show, close, data }) => {
     }, []);
 
     return (
-        <Modal show={show} onHide={close} animation={false}>
+        <Modal show={show} onHide={close} animation={false} backdrop="static">
             <motion.div variants={modalVariants} initial="hidden" animate={show ? "visible" : "hidden"} exit="exit">
                 <Modal.Body style={{ width: "100%", height: "500px" }}>
                     <ToastContainer containerId={"AddAdd"} />
@@ -184,47 +184,51 @@ const AddnewAddress = ({ show, close, data }) => {
                                             Phường/Xã
                                         </div>
                                     </div>
-                                    {IsShow.selectT && (
-                                        <div className="province">
-                                            {Object.keys(administrativeData).map((province) => (
-                                                <p
-                                                    key={province}
-                                                    onClick={() => handleSelectProvince(province)}
-                                                    style={{ cursor: "pointer" }}
-                                                >
-                                                    {province}
-                                                </p>
-                                            ))}
-                                        </div>
-                                    )}
-                                    {IsShow.selectH && userData.province && (
-                                        <div className="district">
-                                            {Object.keys(administrativeData[userData.province]).map((district) => (
-                                                <p
-                                                    key={district}
-                                                    onClick={() => handleSelectDistrict(district)}
-                                                    style={{ cursor: "pointer" }}
-                                                >
-                                                    {district}
-                                                </p>
-                                            ))}
-                                        </div>
-                                    )}
-                                    {IsShow.selectX && userData.province && userData.district && (
-                                        <div className="commune">
-                                            {Object.keys(administrativeData[userData.province][userData.district]).map(
-                                                (commune) => (
+                                    <div className="Addchoosebody">
+                                        {IsShow.selectT && (
+                                            <div className="province">
+                                                {Object.keys(administrativeData).map((province) => (
                                                     <p
-                                                        key={commune}
-                                                        onClick={() => handleSelectCommune(commune)}
+                                                        key={province}
+                                                        onClick={() => handleSelectProvince(province)}
                                                         style={{ cursor: "pointer" }}
                                                     >
-                                                        {commune}
+                                                        {province}
                                                     </p>
-                                                )
-                                            )}
-                                        </div>
-                                    )}
+                                                ))}
+                                                
+                                            </div>
+                                        )}
+                                        {IsShow.selectH && userData.province && (
+                                            <div className="district">
+                                                {Object.keys(administrativeData[userData.province]).map((district) => (
+                                                    <p
+                                                        key={district}
+                                                        onClick={() => handleSelectDistrict(district)}
+                                                        style={{ cursor: "pointer" }}
+                                                    >
+                                                        {district}
+                                                    </p>
+                                                ))}
+                                            </div>
+                                        )}
+                                        {IsShow.selectX && userData.province && userData.district && (
+                                            <div className="commune">
+                                                {Object.keys(administrativeData[userData.province][userData.district]).map(
+                                                    (commune) => (
+                                                        <p
+                                                            key={commune}
+                                                            onClick={() => handleSelectCommune(commune)}
+                                                            style={{ cursor: "pointer" }}
+                                                        >
+                                                            {commune}
+                                                        </p>
+                                                    )
+                                                )}
+                                            </div>
+                                        )}
+                                    </div>
+
                                 </div>
                             )}
                             {!IsShow.selectBox && (
@@ -258,47 +262,48 @@ const AddnewAddress = ({ show, close, data }) => {
                                         }
                                         placeholder="Địa chỉ cụ thể (Đường, hẻm - thôn, xóm - số nhà ...)"
                                     />
-                                    <div className="d-flex default">
-                                        {DataState?.AddressData?.length === 0 ? (
-                                            <>
-                                                <input
-                                                    className="isDefault"
-                                                    type="checkbox"
-                                                    checked={true}
-                                                    readOnly={true}
-                                                />
-                                                <label>If this is your first address it will be set as default!.</label>
-                                            </>
-                                        ) : (
-                                            <>
-                                                <input
-                                                    className="isDefaultNotSet"
-                                                    type="checkbox"
-                                                    checked={userData.isDefault}
-                                                    onChange={(e) =>
-                                                        setUserData((prev) => ({
-                                                            ...prev,
-                                                            isDefault: e.target.checked
-                                                        }))
-                                                    }
-                                                />
-                                                <label>Set default address?</label>
-                                            </>
-                                        )}
-                                    </div>
-                                    <div
-                                        className="d-flex"
-                                        style={{ marginTop: "20px", gap: "10px", paddingLeft: "74.5%" }}
-                                    >
-                                        <button onClick={close} className="btn btn-danger">
-                                            Exit
-                                        </button>
-                                        <button onClick={handleAddAddress} className="btn btn-success">
-                                            Save
-                                        </button>
-                                    </div>
+
                                 </>
                             )}
+                            <div className="d-flex default">
+                                {DataState?.AddressData?.length === 0 ? (
+                                    <>
+                                        <input
+                                            className="isDefault"
+                                            type="checkbox"
+                                            checked={true}
+                                            readOnly={true}
+                                        />
+                                        <label>If this is your first address it will be set as default!.</label>
+                                    </>
+                                ) : (
+                                    <>
+                                        <input
+                                            className="isDefaultNotSet"
+                                            type="checkbox"
+                                            checked={userData.isDefault}
+                                            onChange={(e) =>
+                                                setUserData((prev) => ({
+                                                    ...prev,
+                                                    isDefault: e.target.checked
+                                                }))
+                                            }
+                                        />
+                                        <label>Set default address?</label>
+                                    </>
+                                )}
+                            </div>
+                            <div
+                                className="d-flex"
+                                style={{ marginTop: "20px", gap: "10px", paddingLeft: "74.5%" }}
+                            >
+                                <button onClick={close} className="btn btn-danger">
+                                    Exit
+                                </button>
+                                <button onClick={handleAddAddress} className="btn btn-success">
+                                    Save
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </Modal.Body>

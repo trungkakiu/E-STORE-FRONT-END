@@ -1,0 +1,307 @@
+.VoucherManagement-container{
+    width: 100%;
+    margin-top: 8%;
+    margin-bottom: 30px;
+
+    .Header-topic{
+        width: 100%;
+        .left{
+            background-color: white;
+            width: 48%;
+            padding: 10px;
+            border-radius: 5px;
+            height: 150px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+            -3px -3px 5px rgba(255, 255, 255, 0.5);
+            .search{
+                width: 100%;
+                border-radius: 5px;
+                padding: 2px;
+                border: 2px solid black;
+                .icon{
+                    font-size: 20px;
+                    margin-top: 2px;
+                }
+                input{
+                    border: 1px solid white;
+                    outline: none;
+                    width: 100%;
+                    margin-left: 10px;
+                }
+            }
+            .findbyState{
+                width: 25%;
+                height: 85px;
+                padding: 5px;
+                border-radius: 5px;
+                margin-top: 10px;
+                border: 2px solid rgb(123, 123, 123);
+                .a{
+                    margin-bottom: 10px;
+                    margin-top: 5px;
+                    label{
+                        width: 25%;
+                        font-weight: 500;
+                    }
+                    input{
+                        margin-left: 35%;
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+                .b{
+                    label{
+                        width: 25%;
+                        font-weight: 500;
+                    }
+                    input{
+                        margin-left: 35%;
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+              
+            }
+            .filerByDiscount{
+                width: 25%;
+                margin-left: 5px;
+                height: 85px;
+                padding: 5px;
+                border-radius: 5px;
+                margin-top: 10px;
+                border: 2px solid rgb(123, 123, 123);
+                label{
+                    font-weight: 500;
+                }
+                .c{
+                    label{
+                        width: 25%;
+                    }
+                    input{
+                        margin-top: 2px;
+                        text-align: center;
+                        margin-left: 10px;
+                        height: 20px;
+                        width: 60%;
+                    }
+                }
+                .d{
+                    label{
+                        width: 25%;
+                    }
+                    input{
+                        margin-top: 2px;
+                        text-align: center;
+                        width: 60%;
+                        margin-left: 10px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+        .right{
+            background-color: white;
+            width: 48%;
+            border-radius: 5px;
+            margin-left: 3%;
+            padding: 10px;
+            height: 150px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+            -3px -3px 5px rgba(255, 255, 255, 0.5);
+
+            .p98s1{
+                label{
+                    font-weight: 500;
+                    width: 15%;
+                }
+                input{
+                    background-color: rgb(255, 230, 201);
+                    width: 85%;
+                    border-radius: 5px;
+                    height: 35px;
+                    text-align: center;
+                }
+            }
+            .p9812{
+                gap: 10px;
+                margin-top: 10px;
+                label{
+                    font-weight: 500;
+                    width: 100% - 36.7% - 36.7%;
+                    text-align: center;
+                    align-items: center;
+                }
+                input{
+                    background-color: rgb(234, 250, 215);
+                    width: 36.7%;
+                    border-radius: 5px;
+                    height: 35px;
+                    text-align: center;
+                }
+            }
+            .p9813{
+                gap: 10px;
+                margin-top: 10px;
+                input{
+                    width: 46%;
+                    background-color: rgb(215, 250, 234);
+                    border-radius: 5px;
+                    height: 35px;
+                    text-align: center;
+                }
+                .btn{
+                    height: 35px;
+                }
+            }
+        }
+    }
+
+    .Body-contents{
+        width: 99%;
+        margin-top: 20px;
+        background-color: white;
+        height: 100%;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+        -3px -3px 5px rgba(255, 255, 255, 0.5);
+        .loading{
+            width: 100%;
+            padding-top: 15%;
+            align-items: center;
+            text-align: center;
+            height: 400px;
+            .icon{
+                font-size: 40px;
+                animation: spin 2s linear infinite ;
+            }
+            @keyframes spin {
+                0% { transform: rotate(0deg); color: red; }
+                100% { transform: rotate(360deg); color: blue;}
+
+            }
+        }
+        .noData{
+            width: 100%;
+            padding-top: 12%;
+            align-items: center;
+            text-align: center;
+            height: 400px;
+            .icon{
+                font-size: 40px;
+            }
+            p{
+                font-weight: 500;
+                color: gray;
+            }
+        }
+
+        .discount-data{
+            min-height: 415px;
+            padding: 10px;
+            gap: 5px;
+            line-height: 1;
+            .item{
+                position: relative;
+                padding: 5px;
+                width: 33%;
+                height: 95px;
+                border-radius: 5px;
+                border: 2px dashed rgb(69, 190, 255);
+                background-color: rgb(245, 255, 255);
+                
+                .icon{
+                    width: 22%;
+                    padding-top: 2px;
+                    height: 100%;
+                    color: rgb(88, 243, 243);
+                }
+                .remove{
+                    cursor: pointer;
+                    position: absolute;
+                    color: red;
+                    opacity: 0.5;
+                    font-size: 20px;
+                }
+                .remove:hover{
+                    opacity: 1;
+                    animation: shake 1s linear infinite;
+                }
+                @keyframes shake {
+                    0% { transform: translateX(0); }
+                    25% { transform: translateX(-4px) rotate(-10deg); }
+                    50% { transform: translateX(4px) rotate(10deg); }
+                    75% { transform: translateX(-4px) rotate(-10deg); }
+                    100% { transform: translateX(0); }
+                }
+                .contents{
+                    margin-left: 10px;
+                    margin-top: 10px;
+                    width: 100% - 22%;
+                    .top{
+                        justify-content: space-between;
+                        .dis{
+                            background-color: orangered;
+                            padding: 3px;
+                            color: white;
+                            border-radius: 2px;
+                        }
+                    }
+                    .bot{
+                        justify-content: space-between;
+                    }
+                }
+            }
+            .itemExprice {
+                position: relative;
+                padding: 5px;
+                width: 33%;
+                height: 95px;
+                border-radius: 5px;
+                border: 2px dashed rgb(114, 114, 114);
+                background-color: rgb(241, 241, 241);
+                
+                .icon{
+                    width: 22%;
+                    padding-top: 2px;
+                    height: 100%;
+                    color: rgb(175, 204, 204);
+                }
+                .remove{
+                    cursor: pointer;
+                    position: absolute;
+                    color: red;
+                    opacity: 0.5;
+                    font-size: 20px;
+                }
+                .remove:hover{
+                    opacity: 1;
+                    animation: shake 1s linear infinite;
+                }
+                @keyframes shake {
+                    0% { transform: translateX(0); }
+                    25% { transform: translateX(-4px) rotate(-10deg); }
+                    50% { transform: translateX(4px) rotate(10deg); }
+                    75% { transform: translateX(-4px) rotate(-10deg); }
+                    100% { transform: translateX(0); }
+                }
+                .contents{
+                    margin-left: 10px;
+                    margin-top: 10px;
+                    width: 100% - 22%;
+                    .top{
+                        justify-content: space-between;
+                        .dis{
+                            background-color: rgb(212, 187, 178);
+                            padding: 3px;
+                            color: white;
+                            border-radius: 2px;
+                        }
+                    }
+                    .bot{
+                        justify-content: space-between;
+                    }
+                }
+            }
+        }
+
+    }
+}

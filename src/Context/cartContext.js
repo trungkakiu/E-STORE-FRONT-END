@@ -1,6 +1,8 @@
 import { createContext, useState, useEffect } from "react";
 import ResfulAPI from "../Routes/RouteAPI/ResfulAPI";
 
+import { toast, ToastContainer } from "react-toastify";
+
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
@@ -8,7 +10,6 @@ export const CartProvider = ({ children }) => {
     const storedCart = localStorage.getItem("cart");
     return storedCart ? JSON.parse(storedCart) : [];
   });
-
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -35,8 +36,13 @@ export const CartProvider = ({ children }) => {
   const AddCart = async (ProductID, userID, token) => {
     try {
       const response = await ResfulAPI.AddCart(ProductID, userID, token);
+      console.log(response);
       if (response.status === 201) {
         await fetchCart(token);
+        return response;
+      }
+      if (response.status === 403) {
+        toast.error("Your account has been banned");
         return response;
       }
     } catch (error) {
@@ -62,7 +68,10 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart, AddCart, RemoveItem, fetchCart, RemoveCart }}>
+    <CartContext.Provider
+      value={{ cart, AddCart, RemoveItem, fetchCart, RemoveCart }}
+    >
+      <ToastContainer />
       {children}
     </CartContext.Provider>
   );

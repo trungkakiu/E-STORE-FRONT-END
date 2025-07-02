@@ -40,27 +40,44 @@ const UserSetting = () =>{
     const [isOpen, setIsOpen] = useState(openDefault);
     
 
+    const showToast = (id, message, type) => {
+        if (toast.isActive(id)) {
+          toast.update(id, {
+            render: message,
+            type,
+            containerId: "bot",
+            autoClose: 5000, 
+            closeOnClick: true
+          });
+        } else {
+          toast[type](message, {
+            toastId: id,
+            containerId: "bot"
+          });
+        }
+    };
+
     const handleChangePass = async() =>{
         try {
             setIsLoad(
                 (prev) => ({...prev, changePassword: true})
             )
             if(!UserData.oldPass || !UserData.newPass || !UserData.ReNewPass){
-                toast.warning("Please enter complete information!")
+                showToast("warning", "Please enter complete information!", "warning");
                 setIsLoad(
                     (prev) => ({...prev, changePassword: false})
                 )
                 return
             }
             if(UserData.newPass.length < 6){
-                toast.warning("New password requires at least 6 characters!");
+                showToast("warning", "New password requires at least 6 characters!", "warning");
                 setIsLoad(
                     (prev) => ({...prev, changePassword: false})
                 )
                 return;
             }
             if((UserData.newPass !== UserData.ReNewPass) || (UserData.newPass.length !== UserData.ReNewPass.length)){
-                toast.error("New and re-entered passwords do not match!");
+                showToast("error", "New and re-entered passwords do not match!", "error");
                 setIsLoad(
                     (prev) => ({...prev, changePassword: false})
                 )
@@ -68,14 +85,14 @@ const UserSetting = () =>{
             }
             const rs = await ResfulAPI.handleChangePass(UserData.oldPass,UserData.newPass, user.token)
             if(rs.status === 200){
-                toast.success("Password changed successfully ✅");
+                showToast("success" , "Password changed successfully ✅", "success");
                 setIsLoad(
                     (prev) => ({...prev, changePassword: false})
                 )
                 return;
             }
             if(rs.status === 400){
-                toast.error("Old password is incorrect 🕵️");
+                showToast("error" , "Old password is incorrect 🕵️", "error");
                 setIsLoad(
                     (prev) => ({...prev, changePassword: false})
                 )
@@ -90,22 +107,7 @@ const UserSetting = () =>{
         }
     }
 
-    const showToast = (id, message, type) => {
-        if (toast.isActive(id)) {
-          toast.update(id, {
-            render: message,
-            type,
-            containerId: "Profile",
-            autoClose: 5000, 
-            closeOnClick: true
-          });
-        } else {
-          toast[type](message, {
-            toastId: id,
-            containerId: "Profile"
-          });
-        }
-    };
+
     
     const fetchAddress = async() =>{
         try {
@@ -138,17 +140,17 @@ const UserSetting = () =>{
                     await fetchAddress();
                 }
                 if(rs.status === 401){
-                    showToast("forbidden", "forbidden" , "error");
+                    showToast("error", "forbidden" , "error");
                     await fetchAddress();
                 }
                 if(rs.status === 404){
-                    showToast("Missing", "Missing address" , "error");
+                    showToast("error", "Missing address" , "error");
                     await fetchAddress();
                 }
             }
             return;
         } catch (error) {
-            showToast("Error", "Error while set default address" , "error");
+            showToast("error", "Error while set default address" , "error");
             return;
         }
     }
@@ -232,6 +234,7 @@ const UserSetting = () =>{
     const ProfileEdit = () =>{
         return(
             <div className='bot'>
+            <ToastContainer containerId={"bot"}/>
             <AddnewAddress show={isOpen.addAddress} close={()=>closeModal('1')} data={{UserData : user.data.id, AddressData : userAdd}}/>
             <AddressDetail show={isOpen.editAddress} close={()=>closeModal('2')} data={addressDetailData}/>    
             <div className='d-flex'>

@@ -1,0 +1,240 @@
+.UserVoucherStorage{
+    .UserVoucher-header{
+        width: 90%;
+        height: 50px;
+        background-color: white;
+        margin-left: 4%;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+    -3px -3px 5px rgba(255, 255, 255, 0.5);
+    }
+
+    .UserVoucher-contents{
+        width: 90%;
+        min-height: 200px;
+       
+        margin-left: 4%;
+        margin-top: 20px;
+        .noVoucher{
+            background-color: white;
+            padding-top: 4%;
+            text-align: center;
+            align-items: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+            -3px -3px 5px rgba(255, 255, 255, 0.5);
+            width: 100%;
+            height: 200px;
+           
+            .icon{
+                font-size: 35px;
+            }
+            p{
+                font-weight: 500;
+            }
+        }
+        .voucher{
+            background-color: white;
+            width: 100%;
+            height: 100%;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+            -3px -3px 5px rgba(255, 255, 255, 0.5);
+            padding-bottom: 20px;
+            padding: 5px;
+            .title{
+                margin-left: 10px;
+                font-size: 18px;
+                font-weight: 500;
+                width: 100%;
+                border-bottom: 2px solid gray;
+            }
+            .itemCard{
+                cursor: pointer;
+                user-select: none;
+                transition: transform 0.2s ease, z-index 0.2s ease;
+                width: 20%;
+                margin-top: 10px;
+                height: 120px;
+                border-radius: 5px;
+                background-size: cover;
+                position: relative;
+                .name{
+                    padding-top: 10%;
+                    font-weight: 500;
+                    width: 100%;
+                    text-align: center;
+                }
+                .discount{
+                    width: 100%;
+                    text-align: center;
+                }
+                .exprie{
+                    position: absolute;
+                    right: 10px;
+                    padding: 1px;
+                    background-color: rgb(29, 218, 0);
+                    bottom: -2px;
+                    color: rgb(255, 255, 255);
+                    font-weight: 500;
+                    
+                }
+                .exprieOut{
+                    position: absolute;
+                    right: 10px;
+                    bottom: -2px;
+                    color: rgb(255, 255, 255);
+                    padding: 1px;
+                    background-color: red;
+                    font-weight: 500;
+                    animation: show ease-in-out 0.5s infinite;
+                }
+                @keyframes show {
+                    0% {transform: scale(1);}
+                    50% {transform: scale(1.1);}
+                    100% {transform: scale(1);}
+                }
+                
+            }
+            .itemCard:hover{
+                transform: scale(1.04);
+                z-index: 10;
+            }
+        }
+        .OtherVoucher{
+            margin-top: 20px;
+            background-color: white;
+            position: relative;
+            .title{
+                font-size: 18px;
+                font-weight: 500;
+                padding-top: 10px;
+                padding-left: 10px;
+                border-bottom: 2px solid gray;
+            }
+            .voucherforyou{
+                min-height: 115px;
+                margin-top: 5px;
+                .discount-data{
+                    .addNew{
+                        position: absolute;
+                        font-size: 30px;
+                        opacity: 0.5;
+                        cursor: pointer;
+                        transition: transform 0.2s ease, opacity 0.2s ease;
+                        &:hover{
+                            transform: scale(1.1);
+                            opacity: 1;
+                        }
+                    }
+                    width: 33%;
+                    padding: 10px;
+                    gap: 5px;
+                    line-height: 1;
+                    .item{
+                        position: relative;
+                        padding: 5px;
+                        
+                        height: 95px;
+                        border-radius: 5px;
+                        border: 2px dashed rgb(69, 190, 255);
+                        background-color: rgb(245, 255, 255);
+                        
+                        .icon{
+                            width: 22%;
+                            padding-top: 2px;
+                            height: 100%;
+                            color: rgb(88, 243, 243);
+                        }
+                        .remove{
+                            cursor: pointer;
+                            position: absolute;
+                            color: red;
+                            opacity: 0.5;
+                            font-size: 20px;
+                        }
+                        .remove:hover{
+                            opacity: 1;
+                            animation: shake 1s linear infinite;
+                        }
+                        @keyframes shake {
+                            0% { transform: translateX(0); }
+                            25% { transform: translateX(-4px) rotate(-10deg); }
+                            50% { transform: translateX(4px) rotate(10deg); }
+                            75% { transform: translateX(-4px) rotate(-10deg); }
+                            100% { transform: translateX(0); }
+                        }
+                        .contents{
+                            margin-left: 10px;
+                            margin-top: 10px;
+                            width: 100% - 22%;
+                            .top{
+                                justify-content: space-between;
+                                .dis{
+                                    background-color: orangered;
+                                    padding: 3px;
+                                    color: white;
+                                    border-radius: 2px;
+                                }
+                            }
+                            .bot{
+                                justify-content: space-between;
+                            }
+                        }
+                    }
+                    .itemExprice {
+                        position: relative;
+                        padding: 5px;
+                        width: 33%;
+                        height: 95px;
+                        border-radius: 5px;
+                        border: 2px dashed rgb(114, 114, 114);
+                        background-color: rgb(241, 241, 241);
+                        
+                        .icon{
+                            width: 22%;
+                            padding-top: 2px;
+                            height: 100%;
+                            color: rgb(175, 204, 204);
+                        }
+                        .remove{
+                            cursor: pointer;
+                            position: absolute;
+                            color: red;
+                            opacity: 0.5;
+                            font-size: 20px;
+                        }
+                        .remove:hover{
+                            opacity: 1;
+                            animation: shake 1s linear infinite;
+                        }
+                        @keyframes shake {
+                            0% { transform: translateX(0); }
+                            25% { transform: translateX(-4px) rotate(-10deg); }
+                            50% { transform: translateX(4px) rotate(10deg); }
+                            75% { transform: translateX(-4px) rotate(-10deg); }
+                            100% { transform: translateX(0); }
+                        }
+                        .contents{
+                            margin-left: 10px;
+                            margin-top: 10px;
+                            width: 100% - 22%;
+                            .top{
+                                justify-content: space-between;
+                                .dis{
+                                    background-color: rgb(212, 187, 178);
+                                    padding: 3px;
+                                    color: white;
+                                    border-radius: 2px;
+                                }
+                            }
+                            .bot{
+                                justify-content: space-between;
+                            }
+                        }
+                    }
+                }
+    
+            }
+        }
+
+    }
+    
+}

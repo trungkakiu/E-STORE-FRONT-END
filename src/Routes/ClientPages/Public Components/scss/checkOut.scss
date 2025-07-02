@@ -99,5 +99,33 @@
  
             }
         }
+        .final{
+            width: 100%;
+            height: 100px;
+            background-color: white;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+            -3px -3px 5px rgba(255, 255, 255, 0.5);
+            margin-bottom: 20px;
+            .title{
+                width: 60%;
+            }
+            .checkoutFinal{
+                width: 40%;
+                justify-content: space-between;
+                .buyNow{
+                    margin-top: 5%;
+                    margin-right: 2%;
+                    border: 2px solid orangered;
+                    width: 200px;
+                    height: 50px;
+                    font-weight: 500;
+                    color: white;
+                    background-color: rgb(255, 95, 37);
+                }
+                p{
+                    margin-top: 18%;
+                }
+            }
+        }
     }
 }

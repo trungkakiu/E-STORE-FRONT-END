@@ -5,15 +5,18 @@ import {
     faGear, faTicket
 } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
+import { useLocation } from "react-router-dom"; 
 import UserInfo from "../Public Components/userInfo";
-import Tickets from "../Public Components/Tickets";
 import Settings from "../Public Components/Settings";
 import CartHistory from "../Public Components/CartHistory";
 import RatingHistory from "../Public Components/RatingHistory";
+import UserVoucherStorage from "./UserVoucherStorage";
 
 const UserProfile = () => {
     const [isSet, setIsSet] = useState("Profile");
+    const location = useLocation();
+
 
     const renderContent = useCallback(() => {
         switch (isSet) {
@@ -24,7 +27,7 @@ const UserProfile = () => {
             case "Rating-history":
                 return <RatingHistory />;
             case "Tickets":
-                return <Tickets />;
+                return <UserVoucherStorage />;
             case "Settings":
                 return <Settings />; 
             default:
@@ -32,9 +35,15 @@ const UserProfile = () => {
         }
     }, [isSet]);
 
+    useEffect(() => {
+        console.log(location.state)
+        if (location.state?.showCartHistory) {
+            setIsSet("Cart-history");
+        }
+    }, [location.state]);
+
     return (
         <div className="UserProfile-container d-flex">
-            {/* Sidebar Menu */}
             <div className="usernavbar-Contents">
                 {[
                     { key: "Profile", icon: faIdCardClip },
@@ -42,6 +51,7 @@ const UserProfile = () => {
                     { key: "Rating-history", icon: faClockRotateLeft },
                     { key: "Tickets", icon: faTicket },
                     { key: "Settings", icon: faGear },
+
                 ].map((item) => (
                     <div 
                         key={item.key} 
@@ -52,8 +62,6 @@ const UserProfile = () => {
                     </div>
                 ))}
             </div>
-
-            {/* Nội dung hiển thị */}
             <div className="topic-contents">
                 {renderContent()}
             </div>

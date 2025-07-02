@@ -45,11 +45,11 @@
 
         .selectBox{
             user-select: none;
-            height: 220px;
+            height: 200px;
             border-radius: 5px;
             margin-top: 5px;
             border: 1px solid gray;
-
+            
             .HeaderActive{
                 height: 40px;
                 cursor: pointer;
@@ -67,27 +67,34 @@
                 font-size: 17px;
                 width: 35%;
             }
-            .province{
-                text-align: center;
-                max-height: 175px;
+            .AddchooseBody{
+                max-height: 160px;
                 overflow-y: scroll; 
                 scrollbar-width: none; 
                 -ms-overflow-style: none;
+                .province{
+                    text-align: center;
+                    max-height: 175px;
+                    overflow-y: scroll; 
+                    scrollbar-width: none; 
+                    -ms-overflow-style: none;
+                }
+                .district{
+                    max-height: 175px;
+                    text-align: center;
+                    overflow-y: scroll; 
+                    scrollbar-width: none; 
+                    -ms-overflow-style: none;
+                }
+                .commune{
+                    max-height: 175px;
+                    text-align: center;
+                    overflow-y: scroll; 
+                    scrollbar-width: none; 
+                    -ms-overflow-style: none;
+                }
             }
-            .district{
-                max-height: 175px;
-                text-align: center;
-                overflow-y: scroll; 
-                scrollbar-width: none; 
-                -ms-overflow-style: none;
-            }
-            .commune{
-                max-height: 175px;
-                text-align: center;
-                overflow-y: scroll; 
-                scrollbar-width: none; 
-                -ms-overflow-style: none;
-            }
+
         }
         textarea{
             margin-top: 20px;

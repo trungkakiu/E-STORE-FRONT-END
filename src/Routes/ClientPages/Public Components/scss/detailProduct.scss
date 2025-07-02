@@ -48,15 +48,38 @@
                     }
                 }
                 .comenter{
-                    text-align: center;
+                    
+                    .Nodata{
+                        margin-top: 2%;
+                        text-align: center;
+                    }
                     justify-content: center;
                     .cmicon{
                         margin-top: 20px;
                         font-size: 56px;
                         margin-bottom: 10px;
                     }
-                    p{
+                    .CommentData{
+                        .itemComment{
+                            width: 100%;
+                            padding: 10px;
+                            background-color: rgb(255, 250, 245);
+                            margin-bottom: 10px;
+                            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+                            -3px -3px 5px rgba(255, 255, 255, 0.5);
+                            
+                            .Comment{
+                                margin: 0.5rem 0;
+                                word-wrap: break-word; 
+                                overflow-wrap: break-word; 
+                                white-space: normal;
+                                width: 77%;
 
+                            }
+                            .StarActive{
+                                color: rgb(239, 239, 0);
+                            }
+                        }
                     }
                 }
             }
@@ -125,6 +148,11 @@
                         font-size: 20px;
                         font-weight: 550;
                         padding-right: 6px;
+                    }
+                    .StarActive{
+                        font-size: 23px;
+                        padding-top: 2px;
+                        color: rgb(246, 209, 0)
                     }
                     .star{
                         font-size: 23px;
@@ -221,6 +249,11 @@
                     .soldstar{
                         user-select: none;
                         font-size: 20px;
+                        .StarActive{
+                            margin-top: 4px;
+                            padding-left: 0px;
+                            color: rgb(241, 245, 0);
+                        }
                         .star{
                             margin-top: 4px;
                             padding-left: 3px;

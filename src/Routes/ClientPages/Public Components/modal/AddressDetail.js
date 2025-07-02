@@ -169,7 +169,7 @@ const AddressDetail = ({ show, close, data }) => {
     }, []);
 
     return (
-        <Modal show={show} onHide={close} animation={false}>
+        <Modal show={show} onHide={close} animation={false} backdrop="static">
             <motion.div variants={modalVariants} initial="hidden" animate={show ? "visible" : "hidden"} exit="exit">
                 <Modal.Body style={{ width: "100%", height: "500px" }}>
                     <ToastContainer containerId={"AddAdd"} />
@@ -228,47 +228,50 @@ const AddressDetail = ({ show, close, data }) => {
                                             Phường/Xã
                                         </div>
                                     </div>
-                                    {IsShow.selectT && (
-                                        <div className="province">
-                                            {Object.keys(administrativeData).map((city) => (
-                                                <p
-                                                    key={city}
-                                                    onClick={() => handleSelectProvince(city)}
-                                                    style={{ cursor: "pointer" }}
-                                                >
-                                                    {city}
-                                                </p>
-                                            ))}
-                                        </div>
-                                    )}
-                                    {IsShow.selectH && DataState.city && (
-                                        <div className="district">
-                                            {Object.keys(administrativeData[DataState.city]).map((district) => (
-                                                <p
-                                                    key={district}
-                                                    onClick={() => handleSelectDistrict(district)}
-                                                    style={{ cursor: "pointer" }}
-                                                >
-                                                    {district}
-                                                </p>
-                                            ))}
-                                        </div>
-                                    )}
-                                    {IsShow.selectX && DataState.city && DataState.district && (
-                                        <div className="commune">
-                                            {Object.keys(administrativeData[DataState.city][DataState.district]).map(
-                                                (street_address) => (
+                                    <div className="AddchooseBody">
+                                        {IsShow.selectT && (
+                                            <div className="province">
+                                                {Object.keys(administrativeData).map((city) => (
                                                     <p
-                                                        key={street_address}
-                                                        onClick={() => handleSelectCommune(street_address)}
+                                                        key={city}
+                                                        onClick={() => handleSelectProvince(city)}
                                                         style={{ cursor: "pointer" }}
                                                     >
-                                                        {street_address}
+                                                        {city}
                                                     </p>
-                                                )
-                                            )}
-                                        </div>
-                                    )}
+                                                ))}
+                                            </div>
+                                        )}
+                                        {IsShow.selectH && DataState.city && (
+                                            <div className="district">
+                                                {Object.keys(administrativeData[DataState.city]).map((district) => (
+                                                    <p
+                                                        key={district}
+                                                        onClick={() => handleSelectDistrict(district)}
+                                                        style={{ cursor: "pointer" }}
+                                                    >
+                                                        {district}
+                                                    </p>
+                                                ))}
+                                            </div>
+                                        )}
+                                        {IsShow.selectX && DataState.city && DataState.district && (
+                                            <div className="commune">
+                                                {Object.keys(administrativeData[DataState.city][DataState.district]).map(
+                                                    (street_address) => (
+                                                        <p
+                                                            key={street_address}
+                                                            onClick={() => handleSelectCommune(street_address)}
+                                                            style={{ cursor: "pointer" }}
+                                                        >
+                                                            {street_address}
+                                                        </p>
+                                                    )
+                                                )}
+                                            </div>
+                                        )}
+                                    </div>
+
                                 </div>
                             )}
                             {!IsShow.selectBox && (
@@ -301,47 +304,48 @@ const AddressDetail = ({ show, close, data }) => {
                                         }
                                         placeholder="Địa chỉ cụ thể (Đường, hẻm - thôn, xóm - số nhà ...)"
                                     />
-                                    <div className="d-flex default">
-                                        {data?.onlyDefault ? (
-                                            <>
-                                                <input
-                                                    className="isDefault"
-                                                    type="checkbox"
-                                                    checked={true}
-                                                    readOnly={true}
-                                                />
-                                                <label>This is your unique address it will be set as default!</label>
-                                            </>
-                                        ) : (
-                                            <>
-                                                <input
-                                                    className="isDefaultNotSet"
-                                                    type="checkbox"
-                                                    checked={DataState.is_default || false}
-                                                    onChange={(e) =>
-                                                        setDataState((prev) => ({
-                                                            ...prev,
-                                                            is_default: e.target.checked
-                                                        }))
-                                                    }
-                                                />
-                                                <label>Set default address?</label>
-                                            </>
-                                        )}
-                                    </div>
-                                    <div
-                                        className="d-flex"
-                                        style={{ marginTop: "20px", gap: "10px", paddingLeft: "74.5%" }}
-                                    >
-                                        <button onClick={close} className="btn btn-danger">
-                                            Exit
-                                        </button>
-                                        <button onClick={handleSaveAddress} className="btn btn-success">
-                                            Save
-                                        </button>
-                                    </div>
+
                                 </>
                             )}
+                            <div className="d-flex default">
+                                {data?.onlyDefault ? (
+                                    <>
+                                        <input
+                                            className="isDefault"
+                                            type="checkbox"
+                                            checked={true}
+                                            readOnly={true}
+                                        />
+                                        <label>This is your unique address it will be set as default!</label>
+                                    </>
+                                ) : (
+                                    <>
+                                        <input
+                                            className="isDefaultNotSet"
+                                            type="checkbox"
+                                            checked={DataState.is_default || false}
+                                            onChange={(e) =>
+                                                setDataState((prev) => ({
+                                                    ...prev,
+                                                    is_default: e.target.checked
+                                                }))
+                                            }
+                                        />
+                                        <label>Set default address?</label>
+                                    </>
+                                )}
+                            </div>
+                            <div
+                                className="d-flex"
+                                style={{ marginTop: "20px", gap: "10px", paddingLeft: "74.5%" }}
+                            >
+                                <button onClick={close} className="btn btn-danger">
+                                    Exit
+                                </button>
+                                <button onClick={handleSaveAddress} className="btn btn-success">
+                                    Save
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </Modal.Body>

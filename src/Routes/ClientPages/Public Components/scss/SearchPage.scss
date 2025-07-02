@@ -1,0 +1,132 @@
+.SearchPage-container{
+    margin-top: 120px;
+    padding: 10px;
+    .TopContent{
+        width: 80%;
+        margin-left: 10%;
+        
+        .filterBar{
+            background-color: white;
+            margin-right: 10px;
+            width: 20%;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+            -3px -3px 5px rgba(255, 255, 255, 0.5);
+        }
+
+        .SearhFound{
+            width: 80%;
+            .Data{
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+                -3px -3px 5px rgba(255, 255, 255, 0.5);
+                background-color: white;
+                min-height: 300px;
+                padding: 10px;
+
+                .iConHD{
+                    margin-right: 10px;
+                    color: rgb(255, 221, 0);
+                    font-size: 20px;
+                }
+                .ItemCard{
+                    width: 180px;
+                    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                    margin-top: 10px;
+                    border: 2px solid rgb(169, 169, 169);
+                    &:hover{
+                        transform: translateY(-10px);
+                        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+                        -3px -3px 5px rgba(255, 255, 255, 0.5);
+                    }
+
+                    .divoois{
+                        justify-content: space-between;
+                    }
+
+                    .addtocart{
+                        background-color: orangered;
+                        color: white;
+                        width: 40px;
+                        text-align: center;
+                        height: 30px;
+                        padding: 4px;
+                        border-radius: 5px;
+                        margin-right: 2%;
+                        cursor: pointer;
+                        transition: transform 0.2s ease;
+                        &:hover{
+                            transform: scale(1.05);
+                        }
+                    }
+
+                    .OutStockCart{
+                        background-color: gray;
+                        color: white;
+                        width: 40px;
+                        text-align: center;
+                        height: 30px;
+                        padding: 4px;
+                        border-radius: 5px;
+                        margin-right: 2%;
+                        cursor: not-allowed;
+                    }
+                    
+                }
+                
+            }
+
+            .NoData{
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+                -3px -3px 5px rgba(255, 255, 255, 0.5);
+                background-color: white;
+                min-height: 400px;
+                padding: 10px;
+                .iConHD{
+                    font-size: 20px;
+                    color: rgb(255, 225, 0);
+                    margin-right: 10px;
+                }
+                .contents{
+                    text-align: center;
+                    padding-top: 10%;
+                    p{
+                        font-size: 20px;
+                    }
+                    .icon{
+                        font-size: 40px;
+                        animation: spin 1s linear infinite;
+                    }
+                    @keyframes spin {   
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
+                }
+            }
+        }
+    }
+
+    .bot-contents{
+        width: 80%;
+        margin-top: 30px;
+        margin-left: 10%;
+        .title{
+            width: 100%;
+            color: white;
+            background-color: orangered;
+            p{
+                margin-left: 10px;
+                font-weight: 500;
+            }
+        }
+
+        .ItemCard{
+            border: 2px solid rgb(173, 173, 173);
+            margin-bottom: 10px;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+            &:hover{
+                transform: translateY(-5px);
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+                -3px -3px 5px rgba(255, 255, 255, 0.5);
+            }
+        }
+    }
+}
