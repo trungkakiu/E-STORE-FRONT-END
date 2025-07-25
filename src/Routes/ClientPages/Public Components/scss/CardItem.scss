@@ -84,6 +84,22 @@
           background-color: orangered;
           flex: 2;
         }
+
+        .outStock {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 5px;
+          cursor: not-allowed;
+          color: white;
+          padding: 5px;
+          background-color: gray;
+          flex: 2;
+          user-select: none;
+          span {
+            font-size: 10px;
+          }
+        }
       }
     }
   }

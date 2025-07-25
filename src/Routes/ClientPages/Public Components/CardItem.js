@@ -21,6 +21,7 @@ const CartItem = ({ data, width, height }) => {
     login: false,
     cateContent: false,
   };
+  const [addingToCart, setAddingToCart] = useState({});
   const [isOpen, setisOpen] = useState(StateDefautl);
   const handleImageLoad = (id) => {
     setImageLoaded((prev) => ({ ...prev, [id]: true }));
@@ -71,26 +72,30 @@ const CartItem = ({ data, width, height }) => {
   };
 
   const AddCart = async (ProductID) => {
+    setAddingToCart((prev) => ({ ...prev, [ProductID]: true }));
+
     try {
       const response = await ResfulAPI.AddCart(
         ProductID,
         user.data.id,
         user.token
       );
+
       if (response.status === 201) {
-        showToast("success", "Add product complalte!", "success", "HomePage");
+        showToast("success", "Add product complete!", "success", "HomePage");
         fetchCart(user.token);
-        return;
-      }
-      if (response.status === 401) {
+      } else if (response.status === 401) {
         showToast("error", "Out of stock!", "error", "HomePage");
-        return;
       }
     } catch (error) {
       console.error(error);
-      return;
+    } finally {
+      setTimeout(() => {
+        setAddingToCart((prev) => ({ ...prev, [ProductID]: false }));
+      }, 500);
     }
   };
+
   const defaultImage =
     data?.images?.find((img) => img.is_default) || data.images?.[0];
   return (
@@ -149,16 +154,36 @@ const CartItem = ({ data, width, height }) => {
               <div className="prdPrice">
                 <span>{Number(data?.price).toLocaleString("vi-VN")}đ</span>
               </div>
-              <div
-                className="addtocart"
-                onClick={
-                  user.Authen
-                    ? () => AddCart(data?.id)
-                    : () => openModal("login")
-                }
-              >
-                <FontAwesomeIcon icon={faCartArrowDown} />
-              </div>
+              {data.stock != 0 ? (
+                <>
+                  <div
+                    className={`addtocart ${
+                      addingToCart[data.id] ? "disabled" : ""
+                    }`}
+                    onClick={() => {
+                      if (addingToCart[data.id]) return;
+
+                      if (user.Authen) {
+                        AddCart(data?.id);
+                      } else {
+                        openModal("login");
+                      }
+                    }}
+                  >
+                    {addingToCart[data.id] ? (
+                      <FontAwesomeIcon icon={faSpinner} spin />
+                    ) : (
+                      <FontAwesomeIcon icon={faCartArrowDown} />
+                    )}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="outStock">
+                    <span>Out stock</span>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>

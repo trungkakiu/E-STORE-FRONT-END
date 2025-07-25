@@ -31,7 +31,7 @@ const UserManagement = () => {
     try {
       const response = await ResfulAPI.FetchAllUser(user.token, "Customer");
       if (response.status === 200) {
-        setAllUsers(response.data.ED.users);
+        setAllUsers(response.data.users);
       } else if (response.status === 401) {
         toast.error("You don't have permission!");
       }

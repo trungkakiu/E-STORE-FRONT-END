@@ -142,7 +142,7 @@ const PublicHomePage = () => {
 
         <CategoryContents
           show={isOpen?.cateContent}
-          close={() => closeModal("CateContent")}
+          close={() => closeModal("cateContent")}
           data={modalData?.category}
           addCart={AddCart}
         />
