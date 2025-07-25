@@ -25,7 +25,7 @@ export const ProductProvider = ({ children }) => {
     try {
       const response = await ResfulAPI.fetchCategory();
       localStorage.setItem("category", JSON.stringify(response.data));
-      setCategory(response.data.ED);
+      setCategory(response.data);
     } catch (error) {
       console.error(error);
     }

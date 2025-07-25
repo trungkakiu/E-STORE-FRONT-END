@@ -55,7 +55,7 @@ const VoucherManagement = () => {
       setIsLoad(true);
       const rs = await ResfulAPI.fetchVouCher(false);
       if (rs.status === 200) {
-        setVoucherData(rs.data.ED);
+        setVoucherData(rs.data);
         setIsLoad(false);
       } else {
         showToast("error", "Error", "error", "voucher");
@@ -133,7 +133,7 @@ const VoucherManagement = () => {
     }
   }, []);
 
-  const dataState = VoucherData.filter((v) => {
+  const dataState = VoucherData?.filter((v) => {
     // Lọc theo code (nếu có)
     if (searchFilterm.Filter) {
       return v.code.toLowerCase().includes(searchFilterm.Filter.toLowerCase());

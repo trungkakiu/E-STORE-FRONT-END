@@ -19,6 +19,7 @@ const PublicRoutes = () => {
       openModal();
     }
   }, [user]);
+
   const openModal = () => {
     setisShow(true);
   };
@@ -35,7 +36,7 @@ const PublicRoutes = () => {
         <Route path="/production/detail" element={<DetailProduct />} />
         <Route path="/Search" element={<SearchPage />} />
 
-        {user.Authen && user.data.is_active && (
+        {user?.Authen && user?.data?.is_active && (
           <>
             <Route path="/cart/checkOut" element={<CheckOut />} />
             <Route path="/user/Voucher" element={<UserVoucherStorage />} />

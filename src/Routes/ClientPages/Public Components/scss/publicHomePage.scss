@@ -37,6 +37,14 @@
     min-height: 100vh;
     margin-top: 8%;
 
+    .banner_2 {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+
     .banner_img {
       display: flex;
       flex-direction: row;

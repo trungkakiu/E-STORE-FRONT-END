@@ -27,22 +27,21 @@ export const UserProvider = ({ children }) => {
       const response = await ResfulAPI.Getprofile(user.token);
       if (response.status === 200) {
         const userData = response.data;
-
-        if (userData.ED.role !== user.data.role) {
+        if (userData.role !== user.data.role) {
           console.log(userData.role, user.data.role);
           toast.error("Your account has been locked_1!");
           await logout();
           return;
         }
 
-        if (!userData.ED.is_active) {
+        if (!userData.is_active) {
           toast.error("Your account has been locked!");
           await logout();
           return;
         }
         setUser((prev) => ({
           ...prev,
-          data: userData.ED,
+          data: userData,
         }));
       }
     } catch (error) {

@@ -51,7 +51,7 @@ const CheckOut = () => {
     try {
       const rs = await ResfulAPI.fetchAdd(user.token);
       if (rs.status === 200) {
-        setUserAdd(rs.data.ED);
+        setUserAdd(rs.data);
       } else if (rs.status === 401) {
         showToast(
           "Invalid-request",
@@ -247,7 +247,7 @@ const CheckOut = () => {
             </div>
           ) : (
             (() => {
-              const isDefaultAdd = userAdd.find((a) => a.is_default === true);
+              const isDefaultAdd = userAdd?.find((a) => a.is_default === true);
               if (isDefaultAdd) {
                 return (
                   <div className="add d-flex">

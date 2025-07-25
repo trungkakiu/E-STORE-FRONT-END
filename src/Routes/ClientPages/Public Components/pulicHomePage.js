@@ -38,8 +38,9 @@ const PublicHomePage = () => {
   };
 
   const openModal = (code, data) => {
+    console.log(code);
     setIsOpen((prev) => ({ ...prev, [code]: true }));
-    if (code === "CateContent") {
+    if (code === "cateContent") {
       const filtered = products.filter((m) => m.category_id === data.id);
       setModalData({ category: { ProductFiler: filtered, Cate: data } });
     }
@@ -66,7 +67,7 @@ const PublicHomePage = () => {
       console.error(error);
     }
   };
-
+  console.log(isOpen);
   const handleLoadMore = () => setVisibleCount((prev) => prev + 10);
 
   useEffect(() => {
@@ -130,7 +131,7 @@ const PublicHomePage = () => {
             {category?.map((it, index) => (
               <p
                 key={index}
-                onClick={() => openModal("CateContent", it)}
+                onClick={() => openModal("cateContent", it)}
                 className="item"
               >
                 {it.name}
@@ -140,9 +141,9 @@ const PublicHomePage = () => {
         </div>
 
         <CategoryContents
-          show={isOpen.cateContent}
+          show={isOpen?.cateContent}
           close={() => closeModal("CateContent")}
-          data={modalData.category}
+          data={modalData?.category}
           addCart={AddCart}
         />
 

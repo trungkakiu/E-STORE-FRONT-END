@@ -190,7 +190,7 @@ const LoginModal = ({ show, close, message }) => {
           showToast("login-success", "Login successful 🤓", "success");
 
           setTimeout(() => {
-            login(profile.data.ED, response.data.access_token);
+            login(profile.data, response.data.access_token);
           }, 100);
 
           close();

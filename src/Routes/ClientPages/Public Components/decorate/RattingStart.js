@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from "react";
-import '../scss/ratting.scss';
+import "../scss/ratting.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import ResfulAPI from "../../../RouteAPI/ResfulAPI";
@@ -66,23 +66,18 @@ const RatingWithComment = ({ PrdID, UserRatting }) => {
       ));
   };
 
-
   return (
     <div className="Ratting flex-column">
       {ratting ? (
         <div className="existing-rating d-flex">
-         
-            <div className="coments">
-                <p>Comment</p>
-                <textarea
-                value={ratting.comment}
-                readOnly
-                ></textarea>
-            </div>
-            <div className="starRating">
-                <p>Rating</p>
+          <div className="coments">
+            <p>Comment</p>
+            <textarea value={ratting.comment} readOnly></textarea>
+          </div>
+          <div className="starRating">
+            <p>Rating</p>
             <div className="ChooseStar">{renderStars(ratting.rating)}</div>
-            </div>
+          </div>
         </div>
       ) : (
         <div className="d-flex">
@@ -107,7 +102,9 @@ const RatingWithComment = ({ PrdID, UserRatting }) => {
                       key={starIndex}
                       icon={faStar}
                       className={`star ${
-                        starIndex <= (hovered || selected) ? "Staractive" : "Star"
+                        starIndex <= (hovered || selected)
+                          ? "Staractive"
+                          : "Star"
                       }`}
                       onMouseEnter={() => handleMouseEnter(starIndex)}
                       onMouseLeave={handleMouseLeave}
