@@ -18,7 +18,7 @@ const DeleteCate = ({ show, close, data }) => {
   const { user } = useContext(UserContext);
   const destroyCate = async () => {
     try {
-      const respone = await ResfulAPI.Delecategory(data, user.token);
+      const respone = await ResfulAPI.DeleteCategory(data, user.token);
       if (respone.status === 200) {
         toast.success("Delete complate category 🫥");
         setTimeout(() => {
